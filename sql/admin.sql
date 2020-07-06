@@ -11,20 +11,20 @@
  Target Server Version : 80020
  File Encoding         : 65001
 
- Date: 06/07/2020 15:08:30
+ Date: 06/07/2020 15:08:10
 */
 
 SET NAMES utf8mb4;
 SET FOREIGN_KEY_CHECKS = 0;
 
 -- ----------------------------
--- Table structure for clinic
+-- Table structure for admin
 -- ----------------------------
-DROP TABLE IF EXISTS `clinic`;
-CREATE TABLE `clinic`  (
+DROP TABLE IF EXISTS `admin`;
+CREATE TABLE `admin`  (
   `id` int(0) NOT NULL,
-  `name` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL COMMENT '诊所名字',
-  `location` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL COMMENT '诊所地理位置',
+  `username` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL COMMENT '管理员账号',
+  `password` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL COMMENT '管理员密码',
   PRIMARY KEY (`id`) USING BTREE
 ) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci ROW_FORMAT = Dynamic;
 
