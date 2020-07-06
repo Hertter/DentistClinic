@@ -1,4 +1,4 @@
-﻿/*
+/*
  Navicat Premium Data Transfer
 
  Source Server         : localhost_3306
@@ -11,7 +11,7 @@
  Target Server Version : 80020
  File Encoding         : 65001
 
- Date: 06/07/2020 16:50:57
+ Date: 06/07/2020 20:38:41
 */
 
 SET NAMES utf8mb4;
@@ -22,18 +22,23 @@ SET FOREIGN_KEY_CHECKS = 0;
 -- ----------------------------
 DROP TABLE IF EXISTS `admin`;
 CREATE TABLE `admin`  (
-  `id` int(0) NOT NULL,
+  `id` int(0) NOT NULL AUTO_INCREMENT,
   `username` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NULL DEFAULT NULL COMMENT '管理员账号',
   `password` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NULL DEFAULT NULL COMMENT '管理员密码',
   PRIMARY KEY (`id`) USING BTREE
 ) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
+-- Records of admin
+-- ----------------------------
+INSERT INTO `admin` VALUES (1, 'hzc', 'hzchzc');
+
+-- ----------------------------
 -- Table structure for case
 -- ----------------------------
 DROP TABLE IF EXISTS `case`;
 CREATE TABLE `case`  (
-  `id` int(0) NOT NULL,
+  `id` int(0) NOT NULL AUTO_INCREMENT,
   `name` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NULL DEFAULT NULL COMMENT '患者名字',
   `sex` tinyint(0) NULL DEFAULT NULL COMMENT '患者性别',
   `born_year` int(0) NULL DEFAULT NULL COMMENT '出生年',
@@ -47,22 +52,33 @@ CREATE TABLE `case`  (
 ) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
+-- Records of case
+-- ----------------------------
+INSERT INTO `case` VALUES (1, '黄志聪', 0, 1998, '无', '3D方案设计中', 1, 1, 1, 1);
+INSERT INTO `case` VALUES (2, '陈港升', 1, 1998, '无', '3D方案设计中', 2, 1, 1, 2);
+
+-- ----------------------------
 -- Table structure for clinic
 -- ----------------------------
 DROP TABLE IF EXISTS `clinic`;
 CREATE TABLE `clinic`  (
-  `id` int(0) NOT NULL,
+  `id` int(0) NOT NULL AUTO_INCREMENT,
   `name` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NULL DEFAULT NULL COMMENT '诊所名字',
   `location` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NULL DEFAULT NULL COMMENT '诊所地理位置',
   PRIMARY KEY (`id`) USING BTREE
 ) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
+-- Records of clinic
+-- ----------------------------
+INSERT INTO `clinic` VALUES (1, '心悦口腔', '广州市从化区街口街青云路18号');
+
+-- ----------------------------
 -- Table structure for doctor
 -- ----------------------------
 DROP TABLE IF EXISTS `doctor`;
 CREATE TABLE `doctor`  (
-  `id` int(0) NOT NULL,
+  `id` int(0) NOT NULL AUTO_INCREMENT,
   `name` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NULL DEFAULT NULL COMMENT '医生姓名',
   `username` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NULL DEFAULT NULL COMMENT '账号',
   `password` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NULL DEFAULT NULL COMMENT '密码',
@@ -73,11 +89,16 @@ CREATE TABLE `doctor`  (
 ) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
+-- Records of doctor
+-- ----------------------------
+INSERT INTO `doctor` VALUES (1, '何梓涛', 'hzt', 'hzthzt', 0, '十年老口医,值得信赖.', 1);
+
+-- ----------------------------
 -- Table structure for expert
 -- ----------------------------
 DROP TABLE IF EXISTS `expert`;
 CREATE TABLE `expert`  (
-  `id` int(0) NOT NULL,
+  `id` int(0) NOT NULL AUTO_INCREMENT,
   `name` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NULL DEFAULT NULL COMMENT '专家名',
   `username` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NULL DEFAULT NULL COMMENT '专家账号',
   `password` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NULL DEFAULT NULL COMMENT '专家密码',
@@ -85,11 +106,16 @@ CREATE TABLE `expert`  (
 ) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
+-- Records of expert
+-- ----------------------------
+INSERT INTO `expert` VALUES (1, '专家A', 'zja', 'zjazja');
+
+-- ----------------------------
 -- Table structure for image_data
 -- ----------------------------
 DROP TABLE IF EXISTS `image_data`;
 CREATE TABLE `image_data`  (
-  `id` int(0) NOT NULL,
+  `id` int(0) NOT NULL AUTO_INCREMENT,
   `front` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL COMMENT '正面像',
   `front_smile` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NULL DEFAULT NULL COMMENT '正面微笑像',
   `side` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NULL DEFAULT NULL COMMENT '侧面像',
@@ -104,13 +130,25 @@ CREATE TABLE `image_data`  (
 ) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
+-- Records of image_data
+-- ----------------------------
+INSERT INTO `image_data` VALUES (1, 'http://www.kupan123.com/upload/1594038629x1822619041.png', 'http://www.kupan123.com/upload/1594038690x1822618901.png', 'http://www.kupan123.com/upload/1594038718x1822619041.png', 'http://www.kupan123.com/upload/1594038750x1822619041.png', 'http://www.kupan123.com/upload/1594038787x-1566676391.png', 'http://www.kupan123.com/upload/1594038813x-1566676391.png', 'http://www.kupan123.com/upload/1594038831x-1566676391.png', 'http://www.kupan123.com/upload/1594038870x-1566676002.png', 'http://www.kupan123.com/upload/1594038916x-1566676002.png', 'http://www.kupan123.com/upload/1594038936x1822619344.png');
+INSERT INTO `image_data` VALUES (2, 'http://www.kupan123.com/upload/1594038629x1822619041.png', 'http://www.kupan123.com/upload/1594038690x1822618901.png', 'http://www.kupan123.com/upload/1594038718x1822619041.png', 'http://www.kupan123.com/upload/1594038750x1822619041.png', 'http://www.kupan123.com/upload/1594038787x-1566676391.png', 'http://www.kupan123.com/upload/1594038813x-1566676391.png', 'http://www.kupan123.com/upload/1594038831x-1566676391.png', 'http://www.kupan123.com/upload/1594038870x-1566676002.png', 'http://www.kupan123.com/upload/1594038916x-1566676002.png', 'http://www.kupan123.com/upload/1594038936x1822619344.png');
+
+-- ----------------------------
 -- Table structure for plan
 -- ----------------------------
 DROP TABLE IF EXISTS `plan`;
 CREATE TABLE `plan`  (
-  `id` int(0) NOT NULL,
+  `id` int(0) NOT NULL AUTO_INCREMENT,
   `treatment_plan` varchar(1024) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NULL DEFAULT NULL COMMENT '治疗方案',
   PRIMARY KEY (`id`) USING BTREE
 ) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = Dynamic;
+
+-- ----------------------------
+-- Records of plan
+-- ----------------------------
+INSERT INTO `plan` VALUES (1, '1、先拔除右下8 2、上下颌粘MBT直丝弓托槽 3、三类牵引后退右侧磨牙调整中线 4、再拔除左下8，继续三类牵引 5、调整覆颌覆盖至正常 6、保持');
+INSERT INTO `plan` VALUES (2, '1、先拔除右下8 2、上下颌粘MBT直丝弓托槽 3、三类牵引后退右侧磨牙调整中线 4、再拔除左下8，继续三类牵引 5、调整覆颌覆盖至正常 6、保持');
 
 SET FOREIGN_KEY_CHECKS = 1;
