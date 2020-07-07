@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>添加病例</title>
+<!-- for-mobile-apps -->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="" />
+
+    <script>
+        addEventListener("load", function () {
+            setTimeout(hideURLbar, 0);
+        }, false);
+
+        function hideURLbar() {
+            window.scrollTo(0, 1);
+        }
+    </script>
+	
+	<!-- css files -->
+    <link href="css/bootstrap.css" rel='stylesheet' type='text/css' /><!-- bootstrap css -->
+    <link href="css/style.css" rel='stylesheet' type='text/css' /><!-- custom css -->
+	<link href="css/font-awesome.min.css" rel="stylesheet"><!-- fontawesome css -->
+    <link href="css/common.css" rel='stylesheet' type='text/css' /><!-- custom css -->
+	<!-- //css files -->
+	
+	<!-- google fonts -->
+	<link href="http://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i&amp;subset=cyrillic,cyrillic-ext,greek,greek-ext,latin-ext,vietnamese" rel="stylesheet">
+	<link href="http://fonts.googleapis.com/css?family=Dosis:200,300,400,500,600,700,800&amp;subset=latin-ext" rel="stylesheet">
+	<!-- //google fonts -->
+	
+</head>
+<body>
+<!-- top header -->
+<div class="header-top">
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-6">
+				<ul class="d-lg-flex header-w3_pvt">
+					<li class="mr-lg-3">
+						<span class="fa fa-envelope-open"></span>
+						<a href="#" class="">info@Dentist_Clinic.com</a>
+					</li>
+					<li>
+						<span class="fa fa-phone"></span>
+						<p class="d-inline">联系我们 +12 345 678</p>
+					</li>
+				</ul>
+			</div>
+			<div class="col-sm-6 header-right-w3_pvt">
+				<ul class="d-lg-flex header-w3_pvt justify-content-lg-end">
+					<li class="mr-lg-3">
+						<span class=""><span class="fa fa-clock-o"></span>周一到周五 : 8:30am to 9:30pm</span>
+					</li>
+					<li class="">
+						<span class=""><span class="fa fa-clock-o"></span>周六和周日 : 9:00am to 6:00pm</span>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- //top header -->
+
+<!-- //header -->
+<header class="py-3">
+	<div class="container">
+			<div id="logo">
+				<h1> <a href="index.html"><span class="fa fa-stethoscope" aria-hidden="true"></span> Dentist_Clinic</a></h1>
+			</div>
+		<!-- nav -->
+		<nav class="d-lg-flex">
+
+			<label for="drop" class="toggle"><span class="fa fa-bars"></span></label>
+			<input type="checkbox" id="drop" />
+			<ul class="menu mt-2 ml-auto">
+				<li class="active"><a href="index.html">主页</a></li>
+				<li class=""><a href="about.html">关于我们</a></li>
+				<li class=""><a href="caseManage.html">工作台</a></li>
+				<li class=""><a href="contact.html">联系我们</a></li>
+			</ul>
+			<div class="login-icon ml-2">
+				<a class="user" href="contact.html"> 立即预约</a>
+			</div>
+		</nav>
+		<div class="clear"></div>
+		<!-- //nav -->
+	</div>
+</header>
+<!-- //header -->
+
+<!-- banner -->
+<div class="innerpage-banner" id="home">
+	<div class="inner-page-layer">
+	</div>
+</div>
+<!-- //banner -->
+
+<!-- contact -->
+<section class="mail pt-lg-5 pt-4">
+	<div class="container pt-lg-5">
+		<h2 class="heading text-center mb-sm-5 mb-4">工作台</h2>
+		<div class="row workbench">
+			<div class="col-lg-2 col-sm-3 col-md-2">
+				<div class="list-group">
+					<a href="caseManage.html" class="list-group-item" name="manage">管理病例</a>
+					<a href="caseAdd.html" class="list-group-item active" name="add">
+						创建病例
+					</a>
+					<a href="caseOrder.html" class="list-group-item" name="order">
+						发起订单
+					</a>
+					<a href="checkOrder.html" class="list-group-item" name="order">
+						查看订单
+					</a>
+					<a href="personData.html" class="list-group-item" name="person">
+						个人资料
+					</a>
+				  </div>
+			</div>
+			<div class="col-lg-10 col-sm-9 col-md-2">
+				<div class="col-lg-12 agileinfo_mail_grid_right">
+					<form>
+						<div class="form-group">
+						  <label for="exampleInputName">姓名</label>
+						  <input type="text" class="form-control" placeholder="姓名">
+						</div>
+						<div class="form-group">
+						  <label for="exampleInputSex">性别</label>
+						  <input type="text" class="form-control" placeholder="性别">
+						</div>
+						<div class="form-group">
+							<label for="exampleInputBirth">出生年月</label>
+							<input type="text" class="form-control" placeholder="出生年月">
+						</div>
+						<div class="form-group">
+							<label for="exampleInputStatus">当前状态</label>
+							<input type="text" class="form-control" placeholder="当前状态">
+						</div>
+						<div class="form-group">
+							<label for="exampleInputNote">备注</label>
+							<input type="text" class="form-control" placeholder="备注">
+						</div>
+						<div class="form-group">
+						  <label for="exampleInputFile">上传<span class="photo">正面像</span></label>
+						  <input type="file" id="exampleInputFile">
+						</div>
+						<div class="form-group">
+							<label for="exampleInputFile">上传<span class="photo">正面微笑像</span></label>
+							<input type="file" id="exampleInputFile">
+						</div>
+						<div class="form-group">
+							<label for="exampleInputFile">上传<span class="photo">口内左侧位像</span></label>
+							<input type="file" id="exampleInputFile">
+						</div>
+						<div class="form-group">
+							<label for="exampleInputFile">上传<span class="photo">口内右侧位像</span></label>
+							<input type="file" id="exampleInputFile">
+						</div>
+						<div class="form-group">
+							<label for="exampleInputFile">上传<span class="photo">口内正位像</span></label>
+							<input type="file" id="exampleInputFile">
+						</div>
+						<div class="form-group">
+							<label for="exampleInputFile">上传<span class="photo">上牙列像</span></label>
+							<input type="file" id="exampleInputFile">
+						</div>
+						<div class="form-group">
+							<label for="exampleInputFile">上传<span class="photo">下牙列像</span></label>
+							<input type="file" id="exampleInputFile">
+						</div>
+						<div class="form-group">
+							<label for="exampleInputFile">上传<span class="photo">全颌曲面断层片</span></label>
+							<input type="file" id="exampleInputFile">
+						</div>
+						<div class="form-group">
+							<label for="exampleInputFile">上传<span class="photo">头颅侧位定位片</span></label>
+							<input type="file" id="exampleInputFile">
+						</div>
+						<div class="form-group">
+							<label for="exampleInputIllness">具体病况</label>
+							<textarea name="Illness" id="Illness" cols="30" rows="10" placeholder="描述具体病况..."></textarea>
+						</div>
+						<div class="form-group">
+							<label for="exampleInputTreatment">治疗方案</label>
+							<textarea name="Treatment" id="Treatment" cols="30" rows="10" placeholder="描述治疗方案..."></textarea>
+						</div>
+						<button type="submit" class="btn btn-default pull-right">添加</button>
+					  </form>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+</section>
+<!-- //contact -->
+
+<!-- footer -->
+<footer class="py-5">
+	<div class="container py-sm-3">
+		<div class="row footer-grids">
+			<div class="col-lg-3 col-sm-6 mb-lg-0 mb-sm-5 mb-4">
+				<h4 class="mb-sm-4 mb-3"><span class="fa fa-stethoscope"></span> 牙齿健康</h4>
+				<p class="mb-3">Dentist_Clinic是汇聚了数千家口腔医院和医生资源的口腔健康服务平台,为牙疾患者提供牙齿矫正,牙齿美白,根管治疗,种植牙,烤瓷牙,洗牙,补牙,拔牙,种牙,牙冠,龋齿,智齿,...</p>
+				<h5>已治疗 <span>500+ 人</span> </h5>
+			</div>
+			<div class="col-lg-3 col-sm-6 mb-lg-0 mb-sm-5 mb-4">
+				<h4 class="mb-sm-4 mb-3">地址信息</h4>
+				<p><span class="fa mr-2 fa-map-marker"></span>从化区温泉大道881号 <span>广州</span></p>
+				<p class="phone py-2"><span class="fa mr-2 fa-phone"></span> +1 123 456 789 </p>
+				<p><span class="fa mr-2 fa-envelope"></span><a href="#">info@Dentist_Clinic.com</a></p>
+			</div>
+			<div class="col-lg-2 col-sm-6 mb-sm-0 mb-4">
+				<h4 class="mb-sm-4 mb-3">快速链接</h4>
+				<ul>
+					<li><a href="#">条款条件</a></li>
+					<li class="my-2"><a href="#">支持热线</a></li>
+					<li><a href="#">健康小贴士</a></li>
+					<li class="mt-2"><a href="#">隐私政策</a></li>
+				</ul>
+			</div>
+			<div class="col-lg-4 col-sm-6">
+				<h4 class="mb-sm-4 mb-3">订阅我们</h4>
+				<p class="mb-3">订阅最新活动信息</p>
+				<div class="icon-social mt-3">
+					<a href="#" class="button-footr">
+						<span class="fa mx-2 fa-facebook"></span>
+					</a>
+					<a href="#" class="button-footr">
+						<span class="fa mx-2 fa-twitter"></span>
+					</a>
+					<a href="#" class="button-footr">
+						<span class="fa mx-2 fa-dribbble"></span>
+					</a>
+					<a href="#" class="button-footr">
+						<span class="fa mx-2 fa-pinterest"></span>
+					</a>
+					<a href="#" class="button-footr">
+						<span class="fa mx-2 fa-google-plus"></span>
+					</a>
+
+				</div>
+			</div>
+		</div>
+	</div>
+</footer>
+<!-- //footer -->
+
+<!-- copyright -->
+<div class="copyright">
+	<div class="container py-4">
+		<div class=" text-center">
+			<p>Copyright &copy; 2020.Dentist_Clinic All rights reserved.</p>
+		</div>
+	</div>
+</div>
+<!-- //copyright -->
+
+<!-- move top -->
+<div class="move-top text-right">
+	<a href="#home" class="move-top"> 
+		<span class="fa fa-angle-up  mb-3" aria-hidden="true"></span>
+	</a>
+</div>
+<!-- move top -->
+
+</body>
+</html>
