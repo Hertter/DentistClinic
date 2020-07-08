@@ -40,7 +40,7 @@ DROP TABLE IF EXISTS `illness_case`;
 CREATE TABLE `illness_case`  (
   `id` int(0) NOT NULL AUTO_INCREMENT,
   `name` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NULL DEFAULT NULL COMMENT '患者名字',
-  `sex` tinyint(0) NULL DEFAULT NULL COMMENT '患者性别',
+  `sex` varchar(255) NULL DEFAULT NULL COMMENT '患者性别',
   `born_year` int(0) NULL DEFAULT NULL COMMENT '出生年',
   `note` varchar(500) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NULL DEFAULT NULL COMMENT '备注',
   `status` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NULL DEFAULT NULL COMMENT '案例状态',
@@ -54,8 +54,8 @@ CREATE TABLE `illness_case`  (
 -- ----------------------------
 -- Records of illness_case
 -- ----------------------------
-INSERT INTO `illness_case` VALUES (1, '黄志聪', 0, 1998, '无', '3D方案设计中', 1, 1, 1, 1);
-INSERT INTO `illness_case` VALUES (2, '陈港升', 1, 1998, '无', '3D方案设计中', 2, 1, 1, 2);
+INSERT INTO `illness_case` VALUES (1, '黄志聪', '男', 1998, 'PE：B4（牙合）面畸形中央尖，已完全磨损，露髓，探痛（++），冷痛（++），松动（-）。行全口常规检查发现E3E4滞留；A3弓外牙，腭侧完全萌出；A4未见，E4颊侧牙龈可见隆起明显，触之较硬，无压痛。 A3A4区牙片及全口CT示：E3牙根短小，E4牙根吸收至颈部，A4完全埋藏于骨内，根尖紧贴于上颌窦底。', '3D方案设计中', 1, 1, 1, 1);
+INSERT INTO `illness_case` VALUES (2, '陈港升', '女', 1998, 'PE：B4（牙合）面畸形中央尖，已完全磨损，露髓，探痛（++），冷痛（++），松动（-）。行全口常规检查发现E3E4滞留；A3弓外牙，腭侧完全萌出；A4未见，E4颊侧牙龈可见隆起明显，触之较硬，无压痛。 A3A4区牙片及全口CT示：E3牙根短小，E4牙根吸收至颈部，A4完全埋藏于骨内，根尖紧贴于上颌窦底。', '3D方案设计中', 2, 1, 1, 2);
 
 -- ----------------------------
 -- Table structure for clinic
