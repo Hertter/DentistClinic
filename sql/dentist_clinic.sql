@@ -47,7 +47,7 @@ CREATE TABLE `case`  (
   `image_id` int(0) NULL DEFAULT NULL COMMENT '影像资料',
   `doctor_id` int(0) NULL DEFAULT NULL COMMENT '所属医生',
   `expert_id` int(0) NULL DEFAULT NULL COMMENT '所属专家',
-  `plan_id` int(0) NULL DEFAULT NULL COMMENT '解决方案',
+  `treatment_plan` varchar(1024) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NULL DEFAULT NULL COMMENT '治疗方案',
   PRIMARY KEY (`id`) USING BTREE
 ) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = Dynamic;
 
