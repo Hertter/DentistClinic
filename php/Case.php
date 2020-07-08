@@ -27,6 +27,22 @@ class IllnessCase extends  PDOO {
     }
 
     /**
+     * 指定病例查询
+     * @return mixed
+     */
+    public function find($id) {
+        $result_find = parent::fin([
+                'id',
+                'name',
+                'note'
+            ], 'illness_case', ' id = ' . $id);
+        if ($result_find['status'] === 2) {
+            $result_find['result'] = '查询失败';
+        }
+        return $result_find;
+    }
+
+    /**
      * 病例查询
      * @return mixed
      */
@@ -151,7 +167,7 @@ switch ($function_name){
         $treatment_plan = (isset($_POST['treatment_plan']) && !empty($_POST['treatment_plan'])) ? $_POST['treatment_plan'] : die(json_encode(['status' => 1, 'result' => '缺少治疗方案']));
         $result = $case->$function_name($name, $sex, $born_year, $note, $status, $treatment_plan);
         break;
-    case 'delete':
+    case 'delete' || 'find':
         $id             = (isset($_POST['id']) && !empty($_POST['id'])) ? $_POST['id'] : die(json_encode(['status' => 1, 'result' => '缺少id']));
         $result = $case->$function_name($id);
         break;
