@@ -82,6 +82,43 @@ class IllnessCase extends  PDOO {
         }
         return $result_delete;
     }
+
+    /**
+     * 病例修改
+     * @param $id               病例id
+     * @param $name             患者名字
+     * @param $sex              患者性别
+     * @param $born_year        出生年
+     * @param $note             备注
+     * @param $status           案例状态
+     * @param $treatment_plan   治疗方案
+     * @return mixed
+     */
+    public function update($id, $name, $sex, $born_year, $note, $status, $treatment_plan) {
+        $result_find = parent::fin(['id'], 'illness_case', ' id = ' . $id);
+        if ($result_find['status'] === 0) {
+            $result_update = parent::upd([
+                'name'           => $name,
+                'sex'            => $sex,
+                'born_year'      => $born_year,
+                'note'           => $note,
+                'status'         => $status,
+                'treatment_plan' => $treatment_plan
+            ], 'illness_case', ' id = ' . $id);
+            if ($result_update['status'] === 0) {
+                $result_find['result'] = '更新成功';
+            } elseif ($result_update['status'] === 1) {
+                $result_find['status'] = 1;
+                $result_find['result'] = $result_update['result'];
+            }else {
+                $result_find['status'] = 2;
+                $result_find['result'] = '更新失败';
+            }
+        } elseif ($result_find['status'] === 2) {
+            $result_find['result'] = '病例不存在，更新失败';
+        }
+        return $result_find;
+    }
 }
 
 // 实例化对象
@@ -94,6 +131,16 @@ $result = [];
 switch ($function_name){
     case 'query':
         $result = $case->$function_name();
+        break;
+    case 'update':
+        $id             = (isset($_POST['id']) && !empty($_POST['id'])) ? $_POST['id'] : die(json_encode(['status' => 1, 'result' => '缺少id']));
+        $name           = (isset($_POST['name']) && !empty($_POST['name'])) ? $_POST['name'] : die(json_encode(['status' => 1, 'result' => '缺少患者名字']));
+        $sex            = (isset($_POST['sex']) && !empty($_POST['sex'])) ? $_POST['sex'] : die(json_encode(['status' => 1, 'result' => '缺少患者性别']));
+        $born_year      = (isset($_POST['born_year']) && !empty($_POST['born_year'])) ? $_POST['born_year'] : die(json_encode(['status' => 1, 'result' => '缺少出生年']));
+        $note           = (isset($_POST['note']) && !empty($_POST['note'])) ? $_POST['note'] : die(json_encode(['status' => 1, 'result' => '缺少备注']));
+        $status         = (isset($_POST['status']) && !empty($_POST['status'])) ? $_POST['status'] : die(json_encode(['status' => 1, 'result' => '缺少案例状态']));
+        $treatment_plan = (isset($_POST['treatment_plan']) && !empty($_POST['treatment_plan'])) ? $_POST['treatment_plan'] : die(json_encode(['status' => 1, 'result' => '缺少治疗方案']));
+        $result = $case->$function_name($id, $name, $sex, $born_year, $note, $status, $treatment_plan);
         break;
     case 'add':
         $name           = (isset($_POST['name']) && !empty($_POST['name'])) ? $_POST['name'] : die(json_encode(['status' => 1, 'result' => '缺少患者名字']));
