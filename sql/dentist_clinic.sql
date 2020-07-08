@@ -11,7 +11,7 @@
  Target Server Version : 80020
  File Encoding         : 65001
 
- Date: 06/07/2020 20:38:41
+ Date: 08/07/2020 19:31:57
 */
 
 SET NAMES utf8mb4;
@@ -26,36 +26,12 @@ CREATE TABLE `admin`  (
   `username` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NULL DEFAULT NULL COMMENT '管理员账号',
   `password` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NULL DEFAULT NULL COMMENT '管理员密码',
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of admin
 -- ----------------------------
 INSERT INTO `admin` VALUES (1, 'hzc', 'hzchzc');
-
--- ----------------------------
--- Table structure for case
--- ----------------------------
-DROP TABLE IF EXISTS `case`;
-CREATE TABLE `case`  (
-  `id` int(0) NOT NULL AUTO_INCREMENT,
-  `name` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NULL DEFAULT NULL COMMENT '患者名字',
-  `sex` tinyint(0) NULL DEFAULT NULL COMMENT '患者性别',
-  `born_year` int(0) NULL DEFAULT NULL COMMENT '出生年',
-  `note` varchar(500) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NULL DEFAULT NULL COMMENT '备注',
-  `status` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NULL DEFAULT NULL COMMENT '案例状态',
-  `image_id` int(0) NULL DEFAULT NULL COMMENT '影像资料',
-  `doctor_id` int(0) NULL DEFAULT NULL COMMENT '所属医生',
-  `expert_id` int(0) NULL DEFAULT NULL COMMENT '所属专家',
-  `plan_id` int(0) NULL DEFAULT NULL COMMENT '解决方案',
-  PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = Dynamic;
-
--- ----------------------------
--- Records of case
--- ----------------------------
-INSERT INTO `case` VALUES (1, '黄志聪', 0, 1998, '无', '3D方案设计中', 1, 1, 1, 1);
-INSERT INTO `case` VALUES (2, '陈港升', 1, 1998, '无', '3D方案设计中', 2, 1, 1, 2);
 
 -- ----------------------------
 -- Table structure for clinic
@@ -66,7 +42,7 @@ CREATE TABLE `clinic`  (
   `name` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NULL DEFAULT NULL COMMENT '诊所名字',
   `location` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NULL DEFAULT NULL COMMENT '诊所地理位置',
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of clinic
@@ -86,7 +62,7 @@ CREATE TABLE `doctor`  (
   `profile` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL COMMENT '简介',
   `clinic_id` int(0) NULL DEFAULT NULL COMMENT '所属诊所',
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of doctor
@@ -103,12 +79,36 @@ CREATE TABLE `expert`  (
   `username` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NULL DEFAULT NULL COMMENT '专家账号',
   `password` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NULL DEFAULT NULL COMMENT '专家密码',
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of expert
 -- ----------------------------
 INSERT INTO `expert` VALUES (1, '专家A', 'zja', 'zjazja');
+
+-- ----------------------------
+-- Table structure for illness_case
+-- ----------------------------
+DROP TABLE IF EXISTS `illness_case`;
+CREATE TABLE `illness_case`  (
+  `id` int(0) NOT NULL AUTO_INCREMENT,
+  `name` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NULL DEFAULT NULL COMMENT '患者名字',
+  `sex` tinyint(0) NULL DEFAULT NULL COMMENT '患者性别',
+  `born_year` int(0) NULL DEFAULT NULL COMMENT '出生年',
+  `note` varchar(500) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NULL DEFAULT NULL COMMENT '备注',
+  `status` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NULL DEFAULT NULL COMMENT '案例状态',
+  `image_id` int(0) NULL DEFAULT NULL COMMENT '影像资料',
+  `doctor_id` int(0) NULL DEFAULT NULL COMMENT '所属医生',
+  `expert_id` int(0) NULL DEFAULT NULL COMMENT '所属专家',
+  `plan_id` int(0) NULL DEFAULT NULL COMMENT '解决方案',
+  PRIMARY KEY (`id`) USING BTREE
+) ENGINE = InnoDB AUTO_INCREMENT = 3 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = Dynamic;
+
+-- ----------------------------
+-- Records of illness_case
+-- ----------------------------
+INSERT INTO `illness_case` VALUES (1, '黄志聪', 0, 1998, '无', '3D方案设计中', 1, 1, 1, 1);
+INSERT INTO `illness_case` VALUES (2, '陈港升', 1, 1998, '无', '3D方案设计中', 2, 1, 1, 2);
 
 -- ----------------------------
 -- Table structure for image_data
@@ -127,7 +127,7 @@ CREATE TABLE `image_data`  (
   `qlcwdwp` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NULL DEFAULT NULL COMMENT '全颅侧位定位片',
   `digital_model` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NULL DEFAULT NULL COMMENT '数字模型',
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 2 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of image_data
@@ -143,7 +143,7 @@ CREATE TABLE `plan`  (
   `id` int(0) NOT NULL AUTO_INCREMENT,
   `treatment_plan` varchar(1024) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NULL DEFAULT NULL COMMENT '治疗方案',
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 2 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of plan
