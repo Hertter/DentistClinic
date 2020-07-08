@@ -1,0 +1,39 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+	<style type="text/css">
+		body, html,#allmap {width: 100%;height: 100%;overflow: hidden;margin:0;font-family:"微软雅黑";}
+	</style>
+	<script type="text/javascript" src="//api.map.baidu.com/api?type=webgl&v=1.0&ak=E4805d16520de693a3fe707cdc962045"></script>
+	<title>医生诊所</title>
+</head>
+<body>
+	<div id="allmap"></div>
+</body>
+</html>
+<script type="text/javascript">
+	// 百度地图API功能
+	var map = new BMapGL.Map("allmap");
+	var point = new BMapGL.Point(113.685752,23.638368);
+	map.centerAndZoom(point, 30);
+	
+	var marker = new BMapGL.Marker(point);  // 创建标注
+	map.addOverlay(marker);              // 将标注添加到地图中
+	var opts = {
+	    width : 200,     // 信息窗口宽度
+	    height: 100,     // 信息窗口高度
+	    title : "牙医诊所地址" , // 信息窗口标题
+	    message:"地址信息"
+	}
+	var infoWindow = new BMapGL.InfoWindow("地址：中山大学南方学院333号", opts);  // 创建信息窗口对象 
+	marker.addEventListener("click", function(){          
+		map.openInfoWindow(infoWindow, point); //开启信息窗口
+	}); 
+</script>
+
+
+
+

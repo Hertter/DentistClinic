@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>埃达康首页</title>
+<!-- for-mobile-apps -->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="" />
+<script src="./js/vue.js"></script>
+<script src="./js/vueapp.js"></script>
+    <script>
+        addEventListener("load", function () {
+            setTimeout(hideURLbar, 0);
+        }, false);
+
+        function hideURLbar() {
+            window.scrollTo(0, 1);
+        }
+    </script>
+	
+	<!-- css files -->
+	<link href="css/css_slider.css" type="text/css" rel="stylesheet" media="all"><!-- slider css -->
+    <link href="css/bootstrap.css" rel='stylesheet' type='text/css' /><!-- bootstrap css -->
+    <link href="css/style.css" rel='stylesheet' type='text/css' /><!-- custom css -->
+    <link href="css/font-awesome.min.css" rel="stylesheet"><!-- fontawesome css -->
+	<!-- //css files -->
+	
+	<!-- google fonts -->
+	<link href="http://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i&amp;subset=cyrillic,cyrillic-ext,greek,greek-ext,latin-ext,vietnamese" rel="stylesheet">
+	<link href="http://fonts.googleapis.com/css?family=Dosis:200,300,400,500,600,700,800&amp;subset=latin-ext" rel="stylesheet">
+	<!-- //google fonts -->
+	
+</head>
+<body>
+
+<!-- top header -->
+<div class="header-top">
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-6">
+				<ul class="d-lg-flex header-w3_pvt">
+					<li class="mr-lg-3">
+						<span class="fa fa-envelope-open"></span>
+						<a href="mailto:info@example.com" class="">info@example.com</a>
+					</li>
+					<li>
+						<span class="fa fa-phone"></span>
+						<p class="d-inline">Call Us +12 345 678</p>
+					</li>
+				</ul>
+			</div>
+			<div class="col-sm-6 header-right-w3_pvt">
+				<ul class="d-lg-flex header-w3_pvt justify-content-lg-end">
+					<li class="mr-lg-3">
+						<span class=""><span class="fa fa-clock-o"></span>Mon - Fri : 8:30am to 9:30pm</span>
+					</li>
+					<li class="">
+						<span class=""><span class="fa fa-clock-o"></span>Sat & Sun : 9:00am to 6:00pm</span>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- //top header -->
+
+<!-- //header -->
+<header class="py-3">
+	<div class="container">
+			<div id="logo">
+				<h1> <a href="index.html"><span class="fa fa-stethoscope" aria-hidden="true"></span> 埃达康 </a></h1>
+			</div>
+		<!-- nav -->
+		<nav class="d-lg-flex">
+
+			<label for="drop" class="toggle"><span class="fa fa-bars"></span></label>
+			<input type="checkbox" id="drop" />
+			<ul class="menu mt-2 ml-auto">
+				<li class="active"><a href="index.html">主页</a></li>
+				<li class=""><a href="about.html">关于我们</a></li>
+				<li class=""><a href="services.html">服务</a></li>
+				<li class=""><a href="gallery.html">合作案例</a></li>
+			</ul>
+			<div class="login-icon ml-2" id="app">
+				<a class="user" href="login.html"> 登陆 / 注册</a>	
+			</div>
+			<div class="login-icon ml-2">
+				<a class="user" href="contact.html"> 现在预订 / 联系我们</a>				
+			</div>	
+		</nav>
+		<div class="clear"></div>
+		<!-- //nav -->
+	</div>
+</header>
+<!-- //header -->
+
+<!-- banner -->
+<div class="banner" id="home">
+	<div class="layer">
+		<div class="container">
+			<div class="banner-text-agile">
+				<div class="row">
+					<div class="col-lg-6 p-0">
+						<!-- banner slider-->
+					<div class="csslider infinity" id="slider1">
+						<input type="radio" name="slides" checked="checked" id="slides_1" />
+						<input type="radio" name="slides" id="slides_2" />
+						<input type="radio" name="slides" id="slides_3" />
+						<ul class="banner_slide_bg">
+							<li>
+								<div class="container-fluid">
+									<div class="w3ls_banner_txt">
+										<h3 class="b-w3ltxt text-capitalize mt-md-4"><span>高品质牙齿矫治器 <br /> </span> 埃达康</h3>
+										<p class="w3ls_pvt-title my-3">埃达康齿科每个诊所都配备全科+埃达康采用国际先进的牙科设备及材料，率先引进了瑞典NOBEL GUIDE种植牙技术。
+										在美容修复诊疗的材料选择和设计思路上更是与国际接轨，确保了治疗后的效果；
+										埃达康系列X光机更精确，更加安全，并可有效减少辐射危害。</p>
+										<a href="about.html" class="btn btn-banner my-sm-3 mb-3">发现更多</a>
+										<a href="contact.html" class="btn btn-banner1 my-sm-3 mb-3">咨询牙医</a>
+									</div>
+								</div>
+							</li>
+							<li>
+								<div class="container-fluid">
+									<div class="w3ls_banner_txt">
+										<h3 class="b-w3ltxt text-capitalize mt-md-4"><span>我们关心牙齿健康 <br /> </span> 更关心你</h3>
+										<p class="w3ls_pvt-title my-3">
+										埃达康齿科严格遵循美国齿科协会（ADA）标准进行消毒，杜绝交叉感染。
+										所有诊所均配备了消毒室和无菌室，并用紫外线灭菌灯进行空气消毒。
+										医疗器械每次使用前都经过消毒液浸泡和高温高压双重消毒，不能高温高压消毒的物品均为一次性使用，让客户享受安全的齿科服务。</p>
+										<a href="about.html" class="btn btn-banner my-sm-3 mb-3">发现更多</a>
+										<a href="contact.html" class="btn btn-banner1 my-sm-3 mb-3">咨询牙医</a>
+									</div>
+								</div>
+							</li>
+							<li>
+								<div class="container-fluid">
+									<div class="w3ls_banner_txt">
+										<h3 class="b-w3ltxt text-capitalize mt-md-4"><span>经过专业培训 <br /> </span> 牙科人员</h3>
+										<p class="w3ls_pvt-title my-3">国内外优秀的专业人才汇聚，已经成埃达康最大的人力资源优势。在埃达康医疗团队中，硕士和博士占医生总数的60%以上。
+										埃达康的很多医生毕业于英国伦敦大学皇家医学齿科学院、北京大学口腔医学院、华西医科大学口腔医学院等国内外名校，且大部分医生为美国齿科协会会员。</p>
+										<a href="about.html" class="btn btn-banner my-sm-3 mb-3">发现更多</a>
+										<a href="contact.html" class="btn btn-banner1 my-sm-3 mb-3">咨询牙医</a>
+									</div>
+								</div>
+							</li>
+						</ul>
+						<div class="navigation">
+							<div>
+								<label for="slides_1"></label>
+								<label for="slides_2"></label>
+								<label for="slides_3"></label>
+							</div>
+						</div>
+					</div>
+					<!-- //banner slider-->
+
+					</div>
+					<div class="col-lg-6 col-md-8">
+						<img src="images/banner.png" alt="" class="img-fluid" />
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- //banner -->
+
+<!-- about -->
+<section class="about py-5">
+	<div class="container py-md-3">
+		<h2 class="heading text-center mb-sm-5 mb-4">关于我们 </h2>
+		<div class="row">
+			<div class="col-lg-8">
+				<h4 class="about-left">埃达康生产微笑</h4>
+				<p class="mt-sm-4 mt-3">从沮丧到微笑，从痛苦到开怀其实可以很近 。埃达康客服团队始终秉承“顾客即家人”的服务理念，以真情和贴心的服务真正做到了让客户满意。</p>
+				<div class="row mt-4">
+					<div class="col-md-3 col-6">
+						<div class="about-box">
+							<span class="icon">
+								<span class="fa fa-heartbeat"></span>
+							</span>
+							<h4>&nbsp;&nbsp;牙齿健康</h4>
+						</div>
+					</div>
+					<div class="col-md-3 col-6">
+						<div class="about-box">
+							<span class="icon">
+								<span class="fa fa-s15"></span>
+							</span>
+							<h4>&nbsp;&nbsp;牙齿美白</h4>
+						</div>
+					</div>
+					<!-- .about-box ends here -->
+					<div class="col-md-3 col-6 mt-md-0 mt-4">
+						<div class="about-box">
+							<span class="icon">
+								<span class="fa fa-stethoscope"></span>
+							</span>
+							<h4>&nbsp;&nbsp;牙齿检查</h4>
+						</div>
+					</div>
+					<div class="col-md-3 col-6 mt-md-0 mt-4">
+						<div class="about-box">
+							<span class="icon">
+								<span class="fa fa-slideshare"></span>
+							</span>
+							<h4>&nbsp;&nbsp;牙齿种植</h4>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="col-lg-4 col-md-8 dental">
+				<img src="images/tooth.png" class="img-fluid" alt="" />
+			</div>
+		</div>
+	</div>
+</section>
+<!-- //about -->
+
+<!-- about bottom -->
+<section class="about-bottom pb-5">
+	<div class="container pb-lg-3">
+		<div class="row bottom-grids">
+			<div class="col-lg-6">
+				<img src="images/about.jpg" class="img-fluid" alt="" />
+			</div>
+			<div class="col-lg-6 mt-lg-0 mt-5">
+				<h4>例行牙齿检查</h4>
+				<p class="py-3">我们是专业隐形正畸品牌，而埃达康定制式隐形正畸矫治器具有美观、舒适、卫生、可预见性等优点，还拥有自主研发的贴合棒、摘取器等工具，自主研发的头影测量软件方便临床医生使用，让正畸更精准，效果更好。
+				实际矫治时长根据个体差异有所不同，一般成人需要8-18个月完成矫治。</p>
+				<p class="">口腔检查的项目有：颌面部检查、牙齿检查、牙龈检查、舌的检查、涎腺检查、淋巴结检查、颞下颌关节检查等等。</p>
+			</div>
+		</div>
+	</div>
+</section>
+<!-- //about bottom -->
+
+<!-- services -->
+<section class="services py-5">
+	<div class="container py-lg-5">
+		<h3 class="heading text-center mb-sm-5 mb-4">我们的工作 </h3>
+		<div class="row offer-grids">
+			<div class="col-lg-4 col-md-6">
+				<div class="ser1">
+					<div class="bg-layer">
+						<h4 class="">定制矫治器</h4>
+						<p class="mt-3">我们会根据需求进行分析，为用户个性化定制牙齿矫治器，当然，定制的前提是需要医生的证明，在可修改的基础上进行个性化定制。</p>
+					</div>
+				</div>
+			</div>
+			<div class="col-lg-4 col-md-6 mt-md-0 mt-4">
+				<div class="ser2">
+					<div class="bg-layer">
+						<h4 class="">医生方案</h4>
+						<p class="mt-3">医生为病人设计适合的方案，牙齿拍X光及头部颌骨照片，确定颌面及牙齿及畸形，骨骼发展的方向等，确定准确的矫正方法,根据病人的牙齿健康状况为其定制治疗方案。</p>
+					</div>
+				</div>
+			</div>
+			<div class="col-lg-4 col-md-6 mt-lg-0 mt-4">
+				<div class="ser3">
+					<div class="bg-layer">
+						<h4 class="">专家方案</h4>
+						<p class="mt-3">专家获取医生方案，开始设计牙齿矫治器方案，确定需求进行分析，选择型号，制作牙齿模型，判断过敏材料，为病人定制合适的牙齿矫治器。</p>
+					</div>
+				</div>
+			</div>
+			<div class="col-lg-4 col-md-6 mt-4">
+				<div class="ser4">
+					<div class="bg-layer">
+						<h4 class="">健康服务</h4>
+						<p class="mt-3">我们会提供诊所地点，为客户搭建牙齿检查的一系列服务，包括X光拍照，牙齿美白、牙齿修复、牙齿种植等保护牙齿的服务。</p>
+					</div>
+				</div>
+			</div>
+			<div class="col-lg-4 col-md-6 mt-4">
+				<div class="ser5">
+					<div class="bg-layer">
+						<h4 class="">病历详情</h4>
+						<p class="mt-3">我们会提供提病历的相关信息，当然，数据只能由医生进行修改，用户和专家只有查看的权限，用户可以随时查看自己病历，复诊时可以清楚知道详情</p>
+					</div>
+				</div>
+			</div>
+			<div class="col-lg-4 col-md-6 mt-4">
+				<div class="ser6">
+					<div class="bg-layer">
+						<h4 class="">诊所治疗</h4>
+						<p class="mt-3">诊所会提供一切牙齿护理的必须品，包括X光检视仪器、专业的护理人员，专业的医务医生</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+<!-- //services -->	
+
+<!-- testimonials -->
+<section class="feedback" id="testimonials">
+	<div class="feedback-layer py-5">
+		<div class="container py-lg-5">
+		<h3 class="heading text-center mb-sm-5 mb-4">用户感受</h3>
+			<div class="row">
+				<div class="col-lg-4 col-md-6">
+					<div class="feedback-info">
+						<div class="feedback-top p-4">
+							<span class="fa fa-quote-right"></span> 
+							<p> 由于之前拔过牙，时间久了导致门牙缝隙越来越大，还有门牙歪斜问题，不用想也知道这对我日常形象有多么受损！通过戴牙套关闭牙缝后，我笑起来帅气多了，而且口腔健康也跟着变好。    有人不理解我一个男孩整牙干什么? 丑点怎么了？对于那些牙齿整齐、健康的人，针没扎在自己身上，确实难以理解，但对于我，正畸是人生一个重大的转变，这些时间和精力都是值得的！但他同时也后悔，后悔没有早点找到我们，早点摆脱这个牙缝。</p>
+							<div class="clearfix"></div>
+						</div>
+						<div class="feedback-grids">
+							<div class="feedback-img">
+								<img src="images/ser1.jpg" class="img-fluid" alt="">
+							</div>
+							<div class="feedback-img-info">
+								<h5>Mary Jane</h5>
+								<p class="font-italic">- March 5, 2019.</p>
+							</div>
+							<div class="clearfix"></div>
+						</div>
+					</div>
+				</div>
+				<div class="col-lg-4 col-md-6 mt-md-0 mt-5">
+					<div class="feedback-info">
+						<div class="feedback-top p-4">
+							<span class="fa fa-quote-right"></span> 
+							<p>正畸一开始时，医生先分牙，就是用一个橡皮套套在后面一个磨牙版上，我是上下都带，刚带上还好，过了三四个小时后，后面的几个牙齿又软又酸又疼，咬方便面都痛，过了三四天后，好了一些，一周后去复诊，那时就不太痛了。
+换上金属固位，也是同样，刚开始三四天最难过，用舌头顶牙齿都会痛，用力会痛，我就喝粥，或吃小块的东西。我的虎牙最歪，医生给这颗牙的力最大，所以它最痛。但是以后去复诊，医生调整后，就不会像刚开始那样难过。</p>
+							<div class="clearfix"></div>
+						</div>
+						<div class="feedback-grids">
+							<div class="feedback-img">
+								<img src="images/ser2.jpg" class="img-fluid" alt="">
+							</div>
+							<div class="feedback-img-info">
+								<h5>Mary Jane</h5>
+								<p class="font-italic">- March 8, 2019.</p>
+							</div>
+							<div class="clearfix"></div>
+						</div>
+					</div>
+				</div>
+				<div class="col-lg-4 col-md-6 mt-lg-0 mt-5">
+					<div class="feedback-info">
+						<div class="feedback-top p-4">
+							<span class="fa fa-quote-right"></span> 
+							<p>正畸费用很高，很多人在金钱方便贪图便宜，找一个技术不靠谱的正畸医生，就会出现问题。 第一次我贪便宜找错医生，现在我是二次矫正，首次矫正被拔掉右侧1颗正畸牙，导致牙齿中线的偏移，双侧咬合不对称。由于是二次矫正，我非常谨慎，对比了很多家医生的方案，半年后再来找医生做的矫正。    矫正已经10个月了，明显脸型对称了许多。我后悔吗？当然后悔，费了金钱又耽误了好几年时间，说真的，认真找到一个靠谱的医生太重要了！</p>
+							<div class="clearfix"></div>
+						</div>
+						<div class="feedback-grids">
+							<div class="feedback-img">
+								<img src="images/ser3.jpg" class="img-fluid" alt="">
+							</div>
+							<div class="feedback-img-info">
+								<h5>Mary Jane</h5>
+								<p class="font-italic">- March 15, 2019.</p>
+							</div>
+							<div class="clearfix"></div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+<!-- //testimonials -->
+
+<!-- blog -->
+<section class="blog py-5">
+	<div class="container py-md-5 py-3">
+		<h3 class="heading text-center mb-sm-5 mb-4">最新信息</h3>
+		<div class="row blog-grids">
+			<div class="col-lg-7 mb-lg-5 blog-img1">
+				<img src="images/blog1.jpg" alt="" class="img-fluid"/>
+				<a href="single.html">30%</a>
+			</div>
+			<div class="col-lg-5 mb-lg-5 mb-4">
+				<h5>活动促销</h5>
+				<h4 class="my-3">庆祝疫情稳定，定制矫治器只需交付70%</h4>
+				<p class="my-3">onec consequat sapien ut leo cursus rhoncus. Nullam duit mi, vulputate ac metus semper Nullam dui mi.
+				 Vestibulum ante ipsum primis in faucibus orci luctus et ultrices morbi posuere cubilia Curae; Curabitur quis luctus lectus.
+				 leo et cursus rhoncus. Nullam dui mi, vulputate cursus. </p>
+				<a href="contact.html" class="btn-banner"> 立即定制 </a>
+			</div>
+
+		</div>
+	</div>
+</section>
+<!-- //blog -->
+
+<!-- appointment -->
+<section class="appointment text-center py-5">
+	<div class="container py-sm-3">
+		<h4>让您的梦想成为现实</h4>
+		<p class="mt-3">今天打电话给我们预约</p>
+		<a href="contact.html">立即预约</a>
+	</div>
+</section>
+<!-- //appointment -->
+
+<!-- footer -->
+<footer class="py-5">
+	<div class="container py-sm-3">
+		<div class="row footer-grids">
+			<div class="col-lg-3 col-sm-6 mb-lg-0 mb-sm-5 mb-4">
+				<h4 class="mb-sm-4 mb-3"><span class="fa fa-stethoscope"></span> 健康提示</h4>
+				<p class="mb-3">最基本、最经济的方法是有效刷牙，正确的刷牙方法是竖刷法或拂刷法，拂刷法是指牙刷与牙面呈４５度角，小幅度水平颤动和旋转，选用磨毛保健牙刷和含氟化物的牙膏</p>
+				<h5>Trusted by <span>500+ People</span> </h5>
+			</div>
+			<div class="col-lg-3 col-sm-6 mb-lg-0 mb-sm-5 mb-4">
+				<h4 class="mb-sm-4 mb-3">地址信息</h4>
+				<p><span class="fa mr-2 fa-map-marker"></span>广州市从化区埃达康诊所<br /> <span>中国广东省</span></p>
+				<p class="phone py-2"><span class="fa mr-2 fa-phone"></span> +1(12) 123 456 789 </p>
+				<p><span class="fa mr-2 fa-envelope"></span><a href="mailto:info@example.com">info@example.com</a></p>
+			</div>
+			<div class="col-lg-2 col-sm-6 mb-sm-0 mb-4">
+				<h4 class="mb-sm-4 mb-3">快速链接</h4>
+				<ul>
+					<li><a href="#">条款及细则</a></li>
+					<li class="my-2"><a href="#">支持热线</a></li>
+					<!-- <li><a href="#">健康提示</a></li> -->
+					<li class="mt-2"><a href="#">隐私政策</a></li>
+				</ul>
+			</div>
+			<div class="col-lg-4 col-sm-6">
+				<h4 class="mb-sm-4 mb-3">订阅我们</h4>
+				<p class="mb-3">订阅我们的新闻</p>
+				<form action="#" method="post" class="d-flex">
+					<input type="email" id="email" name="EMAIL" placeholder="Enter your email here" required="">
+					<button type="submit" class="btn">订阅</button>
+				</form>
+				<div class="icon-social mt-3">
+					<a href="#" class="button-footr">
+						<span class="fa mx-2 fa-facebook"></span>
+					</a>
+					<a href="#" class="button-footr">
+						<span class="fa mx-2 fa-twitter"></span>
+					</a>
+					<a href="#" class="button-footr">
+						<span class="fa mx-2 fa-dribbble"></span>
+					</a>
+					<a href="#" class="button-footr">
+						<span class="fa mx-2 fa-pinterest"></span>
+					</a>
+					<a href="#" class="button-footr">
+						<span class="fa mx-2 fa-google-plus"></span>
+					</a>
+
+				</div>
+			</div>
+		</div>
+	</div>
+</footer>
+<!-- //footer -->
+
+<!-- copyright -->
+<div class="copyright">
+	<div class="container py-4">
+		<div class=" text-center">
+			<p>Copyright &copy; 2019.Company name All rights reserved.</p>
+		</div>
+	</div>
+</div>
+<!-- //copyright -->
+		
+<!-- move top -->
+<div class="move-top text-right">
+	<a href="#home" class="move-top"> 
+		<span class="fa fa-angle-up  mb-3" aria-hidden="true"></span>
+	</a>
+</div>
+<!-- move top -->
+
+</body>
+</html>
