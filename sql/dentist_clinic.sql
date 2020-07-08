@@ -34,10 +34,10 @@ CREATE TABLE `admin`  (
 INSERT INTO `admin` VALUES (1, 'hzc', 'hzchzc');
 
 -- ----------------------------
--- Table structure for case
+-- Table structure for illness_case
 -- ----------------------------
-DROP TABLE IF EXISTS `case`;
-CREATE TABLE `case`  (
+DROP TABLE IF EXISTS `illness_case`;
+CREATE TABLE `illness_case`  (
   `id` int(0) NOT NULL AUTO_INCREMENT,
   `name` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NULL DEFAULT NULL COMMENT '患者名字',
   `sex` tinyint(0) NULL DEFAULT NULL COMMENT '患者性别',
@@ -52,10 +52,10 @@ CREATE TABLE `case`  (
 ) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
--- Records of case
+-- Records of illness_case
 -- ----------------------------
-INSERT INTO `case` VALUES (1, '黄志聪', 0, 1998, '无', '3D方案设计中', 1, 1, 1, 1);
-INSERT INTO `case` VALUES (2, '陈港升', 1, 1998, '无', '3D方案设计中', 2, 1, 1, 2);
+INSERT INTO `illness_case` VALUES (1, '黄志聪', 0, 1998, '无', '3D方案设计中', 1, 1, 1, 1);
+INSERT INTO `illness_case` VALUES (2, '陈港升', 1, 1998, '无', '3D方案设计中', 2, 1, 1, 2);
 
 -- ----------------------------
 -- Table structure for clinic
