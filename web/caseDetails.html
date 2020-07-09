@@ -29,7 +29,11 @@
 	<link href="http://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i&amp;subset=cyrillic,cyrillic-ext,greek,greek-ext,latin-ext,vietnamese" rel="stylesheet">
 	<link href="http://fonts.googleapis.com/css?family=Dosis:200,300,400,500,600,700,800&amp;subset=latin-ext" rel="stylesheet">
 	<!-- //google fonts -->
-	
+	<script src="js/jquery-3.4.1.min.js"></script>
+	<script src="https://cdn.staticfile.org/popper.js/1.15.0/umd/popper.min.js"></script>
+	<script src="https://cdn.staticfile.org/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
+	<script src="js/common.js"></script>
+
 </head>
 <body>
 
@@ -64,33 +68,6 @@
 </div>
 <!-- //top header -->
 
-<!-- //header -->
-<header class="py-3">
-	<div class="container">
-			<div id="logo">
-				<h1> <a href="index.html"><span class="fa fa-stethoscope" aria-hidden="true"></span> Dentist_Clinic</a></h1>
-			</div>
-		<!-- nav -->
-		<nav class="d-lg-flex">
-
-			<label for="drop" class="toggle"><span class="fa fa-bars"></span></label>
-			<input type="checkbox" id="drop" />
-			<ul class="menu mt-2 ml-auto">
-				<li class="active"><a href="index.html">主页</a></li>
-				<li class=""><a href="about.html">关于我们</a></li>
-				<li class=""><a href="caseManage.html">工作台</a></li>
-				<li class=""><a href="contact.html">联系我们</a></li>
-			</ul>
-			<div class="login-icon ml-2">
-				<a href="contact.html"> 立即预约</a>
-			</div>
-		</nav>
-		<div class="clear"></div>
-		<!-- //nav -->
-	</div>
-</header>
-<!-- //header -->
-
 <!-- banner -->
 <div class="innerpage-banner" id="home">
 	<div class="inner-page-layer">
@@ -105,45 +82,58 @@
 		<h2 class="heading text-center mb-sm-5 mb-4">病例详情</h2>
 		
 		<section class="services details">
-			<div class="container">
+			<div class="">
 				<!-- <h4 class="heading text-center mb-5">图片</h3> -->
 				<div class="details">
-					<tr>
-						<td>
-							<b>张三</b>
-						</td>
-					</tr>	
 					<div class="information">
 						<div class="media">
-							<div class="media-body">
-							  <b>编号:</b>
-							  1
+							<div class="media-body details-data">
+								<h4>
+									<b>姓名:</b>
+									<span id="name">1</span>
+								</h4>
+							</div>
+						</div>
+						<div class="media">
+							<div class="media-body details-data">
+								<h4>
+									<b>编号:</b>
+							  		<span id="caseId">1</span>
+								</h4>
 							</div>
 						</div>
 	
 						<div class="media">
-							<div class="media-body">
-								<b>性别:</b>
-								男
-								</div>
-						</div>
-						<div class="media">
-							<div class="media-body">
-								<b>出生年月:</b>
-								2020-7
-								</div>
-						</div>
-						
-						<div class="media">
-							<div class="media-body">
-								<b>备注:</b>
-								<div>无</div>
+							<div class="media-body details-data">
+								<h4>
+									<b>性别:</b>
+									<span id="sex">男</span>
+								</h4>
 							</div>
 						</div>
 						<div class="media">
-							<div class="media-body">
-								<b>当前状态:</b>
-								已出院
+							<div class="media-body details-data">
+								<h4>
+									<b>出生年:</b>
+									<span id="born_year">1</span>
+								</h4>
+							</div>
+						</div>
+						
+						<div class="media">
+							<div class="media-body details-data">
+								<h4>
+									<b>备注:</b> 无
+									<!-- <div>无</div> -->
+								</h4>
+							</div>
+						</div>
+						<div class="media">
+							<div class="media-body details-data">
+								<h4>
+									<b>当前状态:</b>
+									<span id="status"></span>
+								</h4>
 							</div>
 						</div>
 					</div>
@@ -157,26 +147,18 @@
 			  	<div class="row">
 					  <label for="description"><h3>具体病况：</h3></label>
 				</div>
-				<text name="description" id="description" class="form-control" cols="30" rows="10" autocomplete="on" style="border: none;">
-					B4（牙合）面畸形中央尖，已完全磨损，露髓，探痛（++），冷痛（++），松动（-）。行全口常规检查发现E3E4滞留；<br>
-					A3弓外牙，腭侧完全萌出；A4未见，E4颊侧牙龈可见隆起明显，触之较硬，无压痛。 <br>
-					A3A4区牙片及全口CT示：E3牙根短小，E4牙根吸收至颈部，A4完全埋藏于骨内，根尖紧贴于上颌窦底。<br>
-				</text>
+				<text name="description" id="note" class="form-control" cols="30" rows="10" autocomplete="on" style="border: none;"></text>
 				<div class="row">
-					<label for="description"><h3>专家方案：</h3></label>
+					<label for="description"><h3>治疗方案：</h3></label>
 				</div>
-				<text name="description" id="description" class="form-control" cols="30" rows="10" autocomplete="on" style="border: none;">
-					B4（牙合）面畸形中央尖，已完全磨损，露髓，探痛（++），冷痛（++），松动（-）。行全口常规检查发现E3E4滞留；<br>
-					A3弓外牙，腭侧完全萌出；A4未见，E4颊侧牙龈可见隆起明显，触之较硬，无压痛。 <br>
-					A3A4区牙片及全口CT示：E3牙根短小，E4牙根吸收至颈部，A4完全埋藏于骨内，根尖紧贴于上颌窦底。<br>
-				</text>
+				<text name="description" id="plan" class="form-control" cols="30" rows="10" autocomplete="on" style="border: none;"></text>
 			</div>
+		</div>
+		<div class="login-icon pull-right work-icon" style="margin-right: 10px">
+			<a href="#" onclick="caseModify()"> 修改</a>
 		</div>
 		<div class="login-icon pull-right work-icon">
 			<a href="caseManage.html"> 返回</a>
-		</div>
-		<div class="login-icon pull-right work-icon" style="margin-right: 10px">
-			<a href="caseModify.html"> 修改</a>
 		</div>
 	</div>
 </section>
