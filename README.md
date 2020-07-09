@@ -2,6 +2,22 @@
 PHP课程设计，基于某牙齿矫治器定制厂家的网站
 
 # 使用说明
+## 配置数据库
+### 创建数据库
+首先在本地创建一个数据库，库名`dentist_clinic`，字符集`utf8mb4`，排序规则`utf8mb4_unicode_ci`，可以使用navicat直接创建，也可以直接复制下面建库的语句：
+```sql
+CREATE DATABASE `dentist_clinic` CHARACTER SET 'utf8mb4' COLLATE 'utf8mb4_unicode_ci';
+```
+### 创建数据表
+复制`sql`文件夹中`dentist_clinic.sql`里面的所有代码并执行，完成数据表的创建
+### 修改账号密码
+`php`文件夹下面有个`PDOO.php`，修改下面的代码：
+```php
+// 数据库用户，默认root用户
+private $user   = 'root';
+// 用户密码，这里修改成你本地数据库的密码
+private $pass   = '你的密码';
+```
 ## 配置虚拟映射
 ### 修改apache配置文件
 找到apache目录下的`httpd-vhosts.conf`文件，一般位于`Apache\conf\extra`目录下，在文件最后新增下面的代码（建议修改前先拷贝文件副本）：
