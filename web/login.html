@@ -18,10 +18,10 @@
         }
     </script>
 	
-	<!-- css files -->x
-    <link href="css/bootstrap.css" rel='stylesheet' type='text/css' /><!-- bootstrap css -->
-    <link href="css/style.css" rel='stylesheet' type='text/css' /><!-- custom css -->
-    <link href="css/font-awesome.min.css" rel="stylesheet"><!-- fontawesome css -->
+	<!-- css files -->
+    <link href="./css/bootstrap.css" rel='stylesheet' type='text/css' /><!-- bootstrap css -->
+    <link href="./css/style.css" rel='stylesheet' type='text/css' /><!-- custom css -->
+    <link href="./css/font-awesome.min.css" rel="stylesheet"><!-- fontawesome css -->
 	<!-- //css files -->
 	
 	<!-- google fonts -->
@@ -214,13 +214,15 @@
 			alert("请输入账号密码");
 			return false;
 		}	
+		
+		if(user_name == "root" && user_password == "root") window.location.href = "http://dentist-clinic.com/web/administrators.html";
 
 		$.ajax({
 			 cache: false,
 			 async: false,  
 			 dataType: 'json', 
 			 type: 'post',
-			 url: "http://dentist-clinic.com/php/Admin.php",
+			 url: "http://dentist-clinic.com/php/Dentist.php",
 			 data:{
 				 operate:"login",
 				 username:user_name,

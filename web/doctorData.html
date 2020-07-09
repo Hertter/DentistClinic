@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>个人资料</title>
+<!-- for-mobile-apps -->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="" />
+
+    <script>
+        addEventListener("load", function () {
+            setTimeout(hideURLbar, 0);
+        }, false);
+
+        function hideURLbar() {
+            window.scrollTo(0, 1);
+        }
+    </script>
+	
+	<!-- css files -->
+    <link href="./css/bootstrap.css" rel='stylesheet' type='text/css' /><!-- bootstrap css -->
+    <link href="./css/style.css" rel='stylesheet' type='text/css' /><!-- custom css -->
+	<link href="./css/font-awesome.min.css" rel="stylesheet"><!-- fontawesome css -->
+    <link href="./css/common.css" rel='stylesheet' type='text/css' /><!-- custom css -->
+	<!-- //css files -->
+	
+	<!-- google fonts -->
+	<link href="http://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i&amp;subset=cyrillic,cyrillic-ext,greek,greek-ext,latin-ext,vietnamese" rel="stylesheet">
+	<link href="http://fonts.googleapis.com/css?family=Dosis:200,300,400,500,600,700,800&amp;subset=latin-ext" rel="stylesheet">
+	<!-- //google fonts -->
+	<script src="./js/jquery-3.4.1.min.js"></script>
+	<script src="./js/common.js"></script>
+	<!-- //google fonts -->
+	<script src="https://cdn.staticfile.org/jquery/3.2.1/jquery.min.js"></script>
+	<script src="https://cdn.staticfile.org/popper.js/1.15.0/umd/popper.min.js"></script>
+	<script src="https://cdn.staticfile.org/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+<!-- top header -->
+<div class="header-top">
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-6">
+				<ul class="d-lg-flex header-w3_pvt">
+					<li class="mr-lg-3">
+						<span class="fa fa-envelope-open"></span>
+						<a href="#" class="">info@Dentist_Clinic.com</a>
+					</li>
+					<li>
+						<span class="fa fa-phone"></span>
+						<p class="d-inline">联系我们 +12 345 678</p>
+					</li>
+				</ul>
+			</div>
+			<div class="col-sm-6 header-right-w3_pvt">
+				<ul class="d-lg-flex header-w3_pvt justify-content-lg-end">
+					<li class="mr-lg-3">
+						<span class=""><span class="fa fa-clock-o"></span>周一到周五 : 8:30am to 9:30pm</span>
+					</li>
+					<li class="">
+						<span class=""><span class="fa fa-clock-o"></span>周六和周日 : 9:00am to 6:00pm</span>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- //top header -->
+
+<!-- banner -->
+<div class="innerpage-banner" id="home">
+	<div class="inner-page-layer">
+	</div>
+</div>
+<!-- //banner -->
+
+<!-- contact -->
+<section class="mail pt-lg-5 pt-4">
+	<div class="container pt-lg-5">
+		<h2 class="heading text-center mb-sm-5 mb-4">工作台</h2>
+		<div class="row">
+			<div class="col-lg-2 col-sm-3 col-md-2">
+				<div class="list-group">
+					<a href="administrators.html" class="list-group-item" name="manage">管理病例</a>
+					<a href="adminOrder.html" class="list-group-item" name="order">订单管理</a>
+					<a href="doctorData.html" class="list-group-item active" name="person">医生资料</a>
+				</div>
+			</div>
+			<div class="col-lg-10 col-sm-9 col-md-2">
+				<div class="col-lg-12 agileinfo_mail_grid_right personData">
+					<div class="container">
+				<table class="table table-striped" style="width: 60rem; margin: 20px auto; text-align: center;border: 1px solid #0ab4f7;">
+					<thead>
+					<tr>
+						<th scope="col">医生编号</th>
+						<th scope="col">医生姓名</td>
+						<th scope="col">医生性别</td>
+						<th scope="col">所属诊所</td>
+						<th scope="col">操作</td>
+					</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<th scope="row">1</th>
+							<td>
+								<div>古力娜扎</div>
+							</td>
+							<td>女</td>
+							<td>中大南方诊所</td>
+							<td>
+								<a class="btn btn-danger btn-small" href="#">删除</a>
+								<a class="btn btn-primary btn-small" href="#" data-toggle="modal" data-target="#expertsPlan1">查看</a>
+							</td>
+							
+						</tr>
+						<tr>
+							<th scope="row">2</th>
+							<td>
+								<div>迪丽热巴</div>
+							</td>
+							<td>女</td>
+							<td>中大南方诊所</td>
+							<td>
+								<a class="btn btn-danger btn-small" href="#">删除</a>
+								<a class="btn btn-primary btn-small" href="#" data-toggle="modal" data-target="#expertsPlan2">查看</a>
+							</td>
+						</tr>
+						<tr>
+							<th scope="row">3</th>
+							<td>
+								<div>马尔扎哈</div>
+							</td>
+							<td>男</td>
+							<td>中大南方诊所</td>
+							<td>
+								<a class="btn btn-danger btn-small" href="#">删除</a>
+								<a class="btn btn-primary btn-small" href="#" data-toggle="modal" data-target="#expertsPlan3">查看</a>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+					<!-- 查看专家方案模态框 -->
+					<div class="modal fade" id="expertsPlan1">
+						<div class="modal-dialog modal-lg">
+							<div class="modal-content">
+							  <!-- 模态框头部 -->
+							  <div class="modal-header">
+								<h5 class="modal-title">查看</h5>
+								<button type="button" class="close" data-dismiss="modal">&times;</button>
+							  </div>
+							  <form>
+								<div class="form-group" style="margin: 1rem;">
+									<div class="form-group">
+										<div class="team-member col-lg-3 col-sm-6 mx-auto">
+											<div class="team-img">
+												<img src="images/t4.jpg" alt="team member" class="img-fluid" id="img-txz">										
+											</div>
+											<div class="team-hover">
+												<div class="desk">
+													<h5>古力娜扎</h4>
+													<p>中大南方诊所<br>主治医生</p>
+												</div>
+												<div class="s-link col-12">
+													<a href="#">
+														<input type="file" accept="image/*" id="file-txz" name="file" onchange="upload('#file-txz', '#img-txz');"  class="fileInput"/>
+													</a>
+																	
+												</div>
+											</div>
+										</div>
+										<label for="plan" class="control-label">姓名:</label>
+										<text class="form-control">古力娜扎</text>
+										<label for="plan" class="control-label">性别:</label>
+										<text class="form-control">女</text>
+										<label for="plan" class="control-label">所属诊所:</label>
+										<text class="form-control">中大南方诊所</text>
+										<label for="plan" class="control-label">个人简介:</label>
+										<text class="form-control">这个人很懒，什么都没留下</text>
+									</div>
+								</div>
+							  </form>
+							  <!-- 模态框底部 -->
+							  <div class="modal-footer">
+								<button type="button" class="btn btn-secondary" style="background:#007bff" data-dismiss="modal">确认</button>
+							  </div>						 
+							</div>
+						  </div>
+					</div>
+					<!-- 查看专家方案模态框 -->
+					<div class="modal fade" id="expertsPlan2">
+						<div class="modal-dialog modal-lg">
+							<div class="modal-content">
+							  <!-- 模态框头部 -->
+							  <div class="modal-header">
+								<h5 class="modal-title">查看</h5>
+								<button type="button" class="close" data-dismiss="modal">&times;</button>
+							  </div>
+							  <form>
+								<div class="form-group" style="margin: 1rem;">
+									<div class="form-group">
+										<div class="team-member col-lg-3 col-sm-6 mx-auto">
+											<div class="team-img">
+												<img src="images/t1.jpg" alt="team member" class="img-fluid" id="img-txz">										
+											</div>
+											<div class="team-hover">
+												<div class="desk">
+													<h5>迪丽热巴</h4>
+													<p>中大南方诊所<br>牙医专家</p>
+												</div>
+												<div class="s-link col-12">
+													<a href="#">
+														<input type="file" accept="image/*" id="file-txz" name="file" onchange="upload('#file-txz', '#img-txz');"  class="fileInput"/>
+													</a>
+																	
+												</div>
+											</div>
+										</div>
+										<label for="plan" class="control-label">姓名:</label>
+										<text class="form-control">迪丽热巴</text>
+										<label for="plan" class="control-label">性别:</label>
+										<text class="form-control">女</text>
+										<label for="plan" class="control-label">所属诊所:</label>
+										<text class="form-control">中大南方诊所</text>
+										<label for="plan" class="control-label">个人简介:</label>
+										<text class="form-control">这个人很懒，什么都没留下</text>
+									</div>
+								</div>
+							  </form>
+							  <!-- 模态框底部 -->
+							  <div class="modal-footer">
+								<button type="button" class="btn btn-secondary" style="background:#007bff" data-dismiss="modal">确认</button>
+							  </div>						 
+							</div>
+						  </div>
+					</div>
+					<!-- 查看专家方案模态框 -->
+					<div class="modal fade" id="expertsPlan3">
+						<div class="modal-dialog modal-lg">
+							<div class="modal-content">
+							  <!-- 模态框头部 -->
+							  <div class="modal-header">
+								<h5 class="modal-title">查看</h5>
+								<button type="button" class="close" data-dismiss="modal">&times;</button>
+							  </div>
+							  <form>
+								<div class="form-group" style="margin: 1rem;">
+									<div class="form-group">
+										<div class="team-member col-lg-3 col-sm-6 mx-auto">
+											<div class="team-img">
+												<img src="images/t2.jpg" alt="team member" class="img-fluid" id="img-txz">										
+											</div>
+											<div class="team-hover">
+												<div class="desk">
+													<h5>马尔扎哈</h4>
+													<p>中大南方诊所<br>主治医生</p>
+												</div>
+												<div class="s-link col-12">
+													<a href="#">
+														<input type="file" accept="image/*" id="file-txz" name="file" onchange="upload('#file-txz', '#img-txz');"  class="fileInput"/>
+													</a>
+																	
+												</div>
+											</div>
+										</div>
+										<label for="plan" class="control-label">姓名:</label>
+										<text class="form-control">马尔扎哈</text>
+										<label for="plan" class="control-label">性别:</label>
+										<text class="form-control">男</text>
+										<label for="plan" class="control-label">所属诊所:</label>
+										<text class="form-control">中大南方诊所</text>
+										<label for="plan" class="control-label">个人简介:</label>
+										<text class="form-control">这个人很懒，什么都没留下</text>
+									</div>
+								</div>
+							  </form>
+							  <!-- 模态框底部 -->
+							  <div class="modal-footer">
+								<button type="button" class="btn btn-secondary" style="background:#007bff" data-dismiss="modal">确认</button>
+							  </div>						 
+							</div>
+						  </div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+</section>
+<!-- //contact -->
+
+<!-- footer -->
+<footer class="py-5">
+	<div class="container py-sm-3">
+		<div class="row footer-grids">
+			<div class="col-lg-3 col-sm-6 mb-lg-0 mb-sm-5 mb-4">
+				<h4 class="mb-sm-4 mb-3"><span class="fa fa-stethoscope"></span> 牙齿健康</h4>
+				<p class="mb-3">Dentist_Clinic是汇聚了数千家口腔医院和医生资源的口腔健康服务平台,为牙疾患者提供牙齿矫正,牙齿美白,根管治疗,种植牙,烤瓷牙,洗牙,补牙,拔牙,种牙,牙冠,龋齿,智齿,...</p>
+				<h5>已治疗 <span>500+ 人</span> </h5>
+			</div>
+			<div class="col-lg-3 col-sm-6 mb-lg-0 mb-sm-5 mb-4">
+				<h4 class="mb-sm-4 mb-3">地址信息</h4>
+				<p><span class="fa mr-2 fa-map-marker"></span>从化区温泉大道881号 <span>广州</span></p>
+				<p class="phone py-2"><span class="fa mr-2 fa-phone"></span> +1 123 456 789 </p>
+				<p><span class="fa mr-2 fa-envelope"></span><a href="#">info@Dentist_Clinic.com</a></p>
+			</div>
+			<div class="col-lg-2 col-sm-6 mb-sm-0 mb-4">
+				<h4 class="mb-sm-4 mb-3">快速链接</h4>
+				<ul>
+					<li><a href="#">条款条件</a></li>
+					<li class="my-2"><a href="#">支持热线</a></li>
+					<li><a href="#">健康小贴士</a></li>
+					<li class="mt-2"><a href="#">隐私政策</a></li>
+				</ul>
+			</div>
+			<div class="col-lg-4 col-sm-6">
+				<h4 class="mb-sm-4 mb-3">订阅我们</h4>
+				<p class="mb-3">订阅最新活动信息</p>
+				<div class="icon-social mt-3">
+					<a href="#" class="button-footr">
+						<span class="fa mx-2 fa-facebook"></span>
+					</a>
+					<a href="#" class="button-footr">
+						<span class="fa mx-2 fa-twitter"></span>
+					</a>
+					<a href="#" class="button-footr">
+						<span class="fa mx-2 fa-dribbble"></span>
+					</a>
+					<a href="#" class="button-footr">
+						<span class="fa mx-2 fa-pinterest"></span>
+					</a>
+					<a href="#" class="button-footr">
+						<span class="fa mx-2 fa-google-plus"></span>
+					</a>
+
+				</div>
+			</div>
+		</div>
+	</div>
+</footer>
+<!-- //footer -->
+
+<!-- copyright -->
+<div class="copyright">
+	<div class="container py-4">
+		<div class=" text-center">
+			<p>Copyright &copy; 2020.Dentist_Clinic All rights reserved.</p>
+		</div>
+	</div>
+</div>
+<!-- //copyright -->
+
+<!-- move top -->
+<div class="move-top text-right">
+	<a href="#home" class="move-top"> 
+		<span class="fa fa-angle-up  mb-3" aria-hidden="true"></span>
+	</a>
+</div>
+<!-- move top -->
+
+</body>
+</html>

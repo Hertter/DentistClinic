@@ -1,4 +1,3 @@
-
 <?php /** @noinspection ALL */
 /**
  * User: Hertter
@@ -6,6 +5,7 @@
  * Time: 16:34
  * Role: 管理员的数据接口
  */
+
 header('Access-Control-Allow-Origin:*');
 require_once 'PDOO.php';
 date_default_timezone_set('Asia/Shanghai');
@@ -35,12 +35,11 @@ class Admin extends PDOO {
      * @return mixed
      */
     public function login($username, $password) {
-		
         $result_find = parent::fin([
                 'username',
                 'password'
             ], 'admin',
-                ' username = ' . $username . ' and password = ' . $password);
+            ' username = \'' . $username . '\' and password = \'' . $password . '\'');
         if ($result_find['status'] === 0) {
             $result_find['result'] = '登录成功';
         } elseif ($result_find['status'] === 2) {
@@ -59,7 +58,7 @@ class Admin extends PDOO {
         $result_find = parent::fin([
             'id'
         ], 'admin',
-            ' username = ' . $username);
+            ' username = \'' . $username . '\'');
         if ($result_find['status'] === 0) {
             $result_find['status'] = 2;
             $result_find['result'] = '用户名已经存在';
@@ -87,7 +86,7 @@ class Admin extends PDOO {
             'username',
             'password'
         ], 'admin',
-            ' username = ' . $username . ' and password = ' . $password);
+            ' username = \'' . $username . '\' and password = \'' . $password . '\'');
         if ($result_find['status'] === 0) {
             $result_delete = parent::del('admin', 'username = ' . $username);
             if ($result_delete['status'] === 0) {
@@ -114,7 +113,7 @@ class Admin extends PDOO {
             'username',
             'password'
         ], 'admin',
-            ' username = ' . $username . ' and password = ' . $password);
+            ' username = \'' . $username . '\' and password = \'' . $password . '\'');
         if ($result_find['status'] === 0) {
             $result_update = parent::upd([
                 'username' => $username,
@@ -163,4 +162,4 @@ switch ($function_name){
 }
 
 // 返回给客户端
-print_r(json_encode($result));
+print_r(json_encode($result, JSON_UNESCAPED_UNICODE));

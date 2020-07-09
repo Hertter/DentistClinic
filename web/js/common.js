@@ -1,8 +1,11 @@
 //请求路径
-var reqUrl = "http://dentist-clinic.com/php/Case.php";
+var reqUrl = "http://dentist-clinic.com:8088/php/Case.php";
+var docReqUrl = "http://dentist-clinic.com:8088/php/Dentist.php";
+
 //跳转路径
-var jumpModify = "http://dentist-clinic.com/web/caseModify.html?";
-var jumpDetail = "http://dentist-clinic.com/web/caseDetails.html?";
+var jumpModify = "http://dentist-clinic.com:8080/web/caseModify.html?";
+var jumpDetail = "http://dentist-clinic.com:8080/web/caseDetails.html?";
+var jumpIndex = "http://dentist-clinic.com:8080/web/index.html";
 
 // 修改资料切换
 $(document).ready(function(){
@@ -31,6 +34,13 @@ var upload = function (c, d) {
         $d.setAttribute("src", e.target.result);
     };
 };
+
+// 返回首页
+function backIndex() {
+    if (confirm("是否要退出登录，并返回首页？")) {
+        window.location.href=jumpIndex;
+    }
+}
 
 //跳转修改页面
 function caseModify() {
@@ -142,6 +152,99 @@ $(function caseFind() {
     });
 });
 
+// 牙医资料查询
+$(function findDoctor() {
+    // 放入username
+    // var username = sessionStorage.getItem('username');
+    
+    // var id = sessionStorage.getItem('id');
+    // var id = 1;
+    var username = "hzt";
 
+    $.ajax({
+        contentType:'application/x-www-form-urlencoded;charset=utf-8',
+        type: "POST",
+        dataType: "json",
+        url: docReqUrl,
+        data: {
+            operate: "find",
+            username: username,
+        },
+        success:function(data){
+            console.log(data);
+
+            var docName = data.result[0].name;
+            var docSex = data.result[0].sex;
+            var docUsername = data.result[0].username;
+            var docPassword = data.result[0].password;
+            var docLocation = data.result[0].location;
+            var docProfile = data.result[0].profile;
+
+            sessionStorage.setItem('docName', docName);
+            sessionStorage.setItem('docSex', docSex);
+            sessionStorage.setItem('docUsername', docUsername);
+            sessionStorage.setItem('docPassword', docPassword);
+            sessionStorage.setItem('docLocation', docLocation);
+            sessionStorage.setItem('docProfile', docProfile);
+
+            $("#docName").html(docName);
+            $("#docSex").html(docSex);
+            $("#docUsername").html(docUsername);
+            // 密码不显示
+            // $("#docPassword").html(docPassword);
+            $("#docLocation").html(docLocation);
+            $("#docProfile").html(docProfile);
+            $("#photoName").html(docName);
+            $("#photoLocation").html(docLocation);
+
+        },
+        error:function(data){
+            console.log(data);
+        }
+    });
+});
+
+//修改页面回显
+$(function modifyDetails() {
+    var docName = sessionStorage.getItem('docName');
+    var docSex = sessionStorage.getItem('docSex');
+    var docUsername = sessionStorage.getItem('docUsername');
+    var docLocation = sessionStorage.getItem('docLocation');
+    var docProfile = sessionStorage.getItem('docProfile');
+    var docPassword = sessionStorage.getItem('docPassword');
+
+    $("#updateName").val(docName);
+    $("#updateSex").val(docSex);
+    $("#updateUsername").val(docUsername);
+    $("#updateLocation").val(docLocation);
+    $("#updateProfile").val(docProfile);
+    $("#updatePassword").val(docPassword);
+
+});
+
+// 更新医生资料
+function updatePersonData() {
+    var updateDocForm = $('#updateDocForm').serialize();
+    $.ajax({
+        contentType:'application/x-www-form-urlencoded;charset=utf-8',
+        type: "POST",
+        dataType: "json",
+        url: docReqUrl,
+        data: $.param({operate: "update"})+'&'+updateDocForm,
+        success: function (data) {
+            console.log(data.result);
+            if("更新成功"==(data.result)){
+                alert(data.result);
+                location.reload();
+            }else{
+                alert(data.result);
+            }
+        },
+        error:function(data) {
+            console.log(data.result);
+            alert("更新失败！");
+        }
+    });
+}
 
 

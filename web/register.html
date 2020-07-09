@@ -103,27 +103,44 @@
 		<h2 class="heading text-center mb-sm-5 mb-4">登陆 / 注册 </h2>
 		<div class="row agileinfo_mail_grids">
 			<div class="col-lg-12 agileinfo_mail_grid_right">
-				<form name="register_form"  method="post">
+
 					<div class="row">
 						<div class="col-md-6 wthree_contact_left_grid pr-md-0">
 							<div class="form-group">
-								<input type="text" name="name" class="form-control" placeholder="账号(长度6~20)" required="">
+								<input type="text" name="account" id="account" class="form-control" placeholder="账号(长度6~20)" required="">
 							</div>
 						</div>
 						<div class="col-md-6 wthree_contact_left_grid pr-md-0">
 							<div class="form-group">
-								<input type="password" name="password" class="form-control" placeholder="密码(长度6~15)" required="">
+								<input type="password" name="password" id="password" class="form-control" placeholder="密码(长度6~15)" required="">
 							</div>
 						</div>
+						<div class="col-md-6 wthree_contact_left_grid pr-md-0">
+							<div class="form-group">
+								<input type="text" name="name" id="name" class="form-control" placeholder="真实姓名" required="">
+							</div>
+						</div>
+						<div class="col-md-6 wthree_contact_left_grid pr-md-0">
+							<div class="form-group">
+								<input type="text" name="sex" id="sex" class="form-control" placeholder="性别(男/女)" required="">
+							</div>
+						</div>
+						<div class="col-md-12 wthree_contact_left_grid pr-md-0">
+							<div class="form-group">
+								<input type="text" name="place" id="place" class="form-control" placeholder="所属诊所" required="">
+							</div>
+						</div>
+						
+						
 						<div class="col-md-3"></div>
 						<div class="submit-buttons col-md-4">
-							<button type="submit" class="btn" id="register_btn">注册</button>
+							<button class="btn" id="register_btn">注册</button>
 						</div>
 						<div class="submit-buttons col-md-5">
 							<a href="login.html"><button type="button" class="btn">切换登陆</button></a>
 						</div>
 					</div>
-				</form>
+
 			</div>
 		</div>
 	</div>
@@ -208,35 +225,52 @@
 <script>
     // 绑定点击事件
     document.querySelector('#register_btn').onclick = function () {
-		var user_name = document.register_form.name.value;
-		var user_password = document.register_form.password.value;
+		var account = document.getElementById("account").value;
+		var password = document.getElementById("password").value;
+		var name = document.getElementById("name").value;
+		var sex = document.getElementById("sex").value;
+		var place = document.getElementById("place").value;
 
-		if(document.register_form.name.value=="" || document.register_form.password.value==""){
+		// console.log("username:"+account);
+		// console.log("password:"+password);
+		// console.log("name:"+name);
+		// console.log("sex:"+sex);
+		// console.log("location:"+place);
+
+		if(account=="" || password==""){
 			alert("请输入账号密码");
 			return false;
 		}
-		if(document.register_form.name.value.length<6 || document.register_form.name.value.length>20){
+		if(account.length<6 || account.length>20){
 			alert("账号长度需要在（6~20）以内");
 			return false;
 		}
-		if(document.register_form.password.value.length<6 || document.register_form.password.value.length>15){
+		if(password.length<6 || password.length>15){
 			alert("密码长度需要在（6~15）以内");
 			return false;
 		}
-		
+		if(sex != "男" && sex != "女"){
+			alert("请填写正确的性别(男/女)");
+			return false;
+		}
        
 		$.ajax({
 			 cache: false,
 			 async: false,  
 			 dataType: 'json', 
 			 type: 'post',
-			 url: "http://dentist-clinic.com/php/Admin.php",
+			 url: "http://dentist-clinic.com/php/Dentist.php",
 			 data:{
 				 operate:"register",
-				 username:user_name,
-				 password:user_password
+				 username:account,
+				 password:password,
+				 name:name,
+				 sex:sex,
+				 location:place
 				 },
-			 success: function (data){ 
+			 success: function (data){
+				 console.log("进入了success");
+				 console.log(data);
 				 if(data.status == 0) {
 					 alert(data.result);
 					 window.location.href = "http://dentist-clinic.com/web/login.html";
@@ -245,6 +279,12 @@
 				 }else if(data.status == 2){
 					 alert(data.result);
 				 }
+			 },
+			 error: function(data){
+				 console.log("进入了error");
+				 console.log(data);
+				 alert("请求失败");
+
 			 }
 		 });
     }

@@ -6,6 +6,7 @@
  * Role: 病例的数据接口
  */
 
+header('Access-Control-Allow-Origin:*');
 require_once 'PDOO.php';
 date_default_timezone_set('Asia/Shanghai');
 
@@ -32,9 +33,13 @@ class IllnessCase extends  PDOO {
      */
     public function find($id) {
         $result_find = parent::fin([
-                'id',
-                'name',
-                'note'
+            'id',
+            'name',
+            'sex',
+            'born_year',
+            'note',
+            'status',
+            'treatment_plan'
             ], 'illness_case', ' id = ' . $id);
         if ($result_find['status'] === 2) {
             $result_find['result'] = '查询失败';
@@ -179,4 +184,4 @@ switch ($function_name){
 }
 
 // 返回给客户端
-print_r(json_encode($result));
+print_r(json_encode($result, JSON_UNESCAPED_UNICODE));

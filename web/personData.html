@@ -63,6 +63,24 @@
 </div>
 <!-- //top header -->
 
+<!-- //header -->
+<header class="py-3">
+	<div class="container">
+			<div id="logo">
+				<h1> <a href="index.html"><span class="fa fa-stethoscope" aria-hidden="true"></span> 埃达康</a></h1>
+			</div>
+		<!-- nav -->
+		<nav class="d-lg-flex">
+			<div class="login-icon ml-2">
+				<a class="user" href="#" onclick="backIndex()"> 回到首页</a>
+			</div>
+		</nav>
+		<div class="clear"></div>
+		<!-- //nav -->
+	</div>
+</header>
+<!-- //header -->
+
 <!-- banner -->
 <div class="innerpage-banner" id="home">
 	<div class="inner-page-layer">
@@ -90,13 +108,12 @@
 							<div class="col-lg-3 col-sm-6 mx-auto">
 								<div class="team-member">
 									<div class="team-img">
-										<img src="images/t4.jpg" alt="team member" class="img-fluid" id="img-txz">
-										
+										<img src="images/t4.jpg" alt="team member" class="img-fluid" id="img-txz">									
 									</div>
 									<div class="team-hover">
 										<div class="desk">
-											<h5>安医生</h4>
-											<p>Dentist Clinic<br>诊所主任医师.</p>
+											<h5><span id="photoName"></span>医生</h4>
+											<p><span id="photoLocation">Dentist Clinic</span><br>诊所主任医师.</p>
 										</div>
 										<div class="s-link col-12">
 											<a href="#">
@@ -116,58 +133,60 @@
 							<div class="personDetailData" id="personDetailData">
 								<div class="row">
 									<b>姓名：</b>
-									<span id="name">Linda Anderson</span>
+									<span id="docName">Linda Anderson</span>
 								</div>
 								<div class="row">
 									<b>性别：</b>
-									<span>女</span>
+									<span id="docSex">女</span>
 								</div>
 								<div class="row">
 									<b>账号：</b>
-									<span>13511111111</span>
+									<span id="docUsername">13511111111</span>
 								</div>
 								<div class="row">
 									<b>密码：</b>
-									<span>********</span>
+									<span id="docPassword">********</span>
 								</div>
 								<div class="row">
 									<b>所属诊所：</b>
-									<span>Dentist Clinic诊所</span>
+									<span id="docLocation">Dentist Clinic诊所</span>
 								</div>
 								<div class="row">
 									<b>简介：</b>
-									<text name="" id="" cols="30" rows="10">
+									<text name="" id="docProfile" cols="30" rows="10">
 										这个人很懒，什么也没留下...
 									</text>
 								</div>
 							</div>
 
 							<div class="personModifyData switch" id="personModifyData">
-								<div class="row">
-									<b>姓名：</b>
-									<input type="text" class="form-control" placeholder="Linda Anderson">
-								</div>
-								<div class="row">
-									<b>性别：</b>
-									<input type="text" class="form-control" placeholder="女">
-								</div>
-								<div class="row">
-									<b>账号：</b>
-									<input type="text" class="form-control" placeholder="13511111111">
-								</div>
-								<div class="row">
-									<b>密码：</b>
-									<input type="text" class="form-control" placeholder="********">
-								</div>
-								<div class="row">
-									<b>所属诊所：</b>
-									<input type="text" class="form-control" placeholder="Dentist Clinic诊所">
-								</div>
-								<div class="row" style="margin-bottom: 1rem;">
-									<b>简介：</b>
-									<textarea name="" id="" cols="30" rows="10">这个人很懒，什么也没留下...</textarea>
-								</div>
-								<button type="submit" class="btn btn-default pull-right">修改</button>
+								<form id="updateDocForm">
+									<div class="row">
+										<b>姓名：</b>
+										<input type="text" class="form-control" id="updateName" value="" name="name">
+									</div>
+									<div class="row">
+										<b>性别：</b>
+										<input type="text" class="form-control" id="updateSex" value="" name="sex">
+									</div>
+									<div class="row">
+										<b>账号：</b>
+										<input type="text" class="form-control" id="updateUsername" value="" name="username">
+									</div>
+									<div class="row">
+										<b>密码：</b>
+										<input type="text" class="form-control" id="updatePassword" value="" name="password">
+									</div>
+									<div class="row">
+										<b>所属诊所：</b>
+										<input type="text" class="form-control" id="updateLocation" value="" name="location">
+									</div>
+									<div class="row" style="margin-bottom: 1rem;">
+										<b>简介：</b>
+										<textarea cols="30" rows="10" id="updateProfile" value="" name="profile"></textarea>
+									</div>
+								</form>
+								<button type="submit" class="btn btn-default pull-right" onclick="updatePersonData()">修改</button>
 								<button type="button" class="btn btn-default pull-right cancel" id="cancel" style="background: gray;">取消</button>
 							</div>
 							

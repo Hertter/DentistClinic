@@ -1,4 +1,4 @@
-var reqUrl = "http://dentist-clinic.com/php/Case.php";
+var reqUrl = "http://dentist-clinic.com:8088/php/Case.php";
 
 // 遍历查询病例
 $(function load() {
