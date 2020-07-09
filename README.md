@@ -154,4 +154,3 @@ status:已出院     // 状态
 treatment_plan:xx // 治疗方案
 id:1              // 病例id
 ```
- 

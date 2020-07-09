@@ -1,3 +1,9 @@
+//请求路径
+var reqUrl = "http://dentist-clinic.com:8088/php/Case.php";
+//跳转路径
+var jumpModify = "http://dentist-clinic.com:8080/web/caseModify.html?";
+var jumpDetail = "http://dentist-clinic.com:8080/web/caseDetails.html?";
+
 // 修改资料切换
 $(document).ready(function(){
     $("#modifyData").click(function(){ 
@@ -29,12 +35,11 @@ var upload = function (c, d) {
 //跳转修改页面
 function caseModify() {
     var id = sessionStorage.getItem('id');
-    window.location.href="http://dentist-clinic.com:8080/web/caseModify.html?"+id;
+    window.location.href = jumpModify + id;
 }
 
 // 修改病例
 function modifyCase() {
-
     var strHref = window.location.href;
     var s = strHref.indexOf("?");
     var id = strHref.substring(s+1);
@@ -47,7 +52,7 @@ function modifyCase() {
         contentType:'application/x-www-form-urlencoded;charset=utf-8',
         type: "POST",
         dataType: "json",
-        url: "http://dentist-clinic.com:8088/php/Case.php",
+        url: reqUrl,
         data: $.param({
             operate: "update",
             note: note,
@@ -58,7 +63,8 @@ function modifyCase() {
             console.log(data);
             alert(data.result);
             if("更新成功"==(data.result)){
-                window.location.href="http://dentist-clinic.com:8080/web/caseDetails.html?"+id;
+                //跳转
+                window.location.href= jumpDetail + id;
             }
         },
         error:function(data) {
@@ -83,11 +89,11 @@ $(function modifyDetails() {
 
 //跳转回病例详情页面
 function returnCaseDetails() {
-
     var strHref = window.location.href;
     var s = strHref.indexOf("?");
     var id = strHref.substring(s+1);
-    window.location.href="http://dentist-clinic.com:8080/web/caseDetails.html?"+id;
+    //跳转
+    window.location.href= jumpDetail + id;
 };
 
 // 根据id查询病例
@@ -99,7 +105,7 @@ $(function caseFind() {
         contentType:'application/x-www-form-urlencoded;charset=utf-8',
         type: "POST",
         dataType: "json",
-        url: "http://dentist-clinic.com:8088/php/Case.php",
+        url: reqUrl,
         data: {
             operate: "find",
             id: id
@@ -122,17 +128,13 @@ $(function caseFind() {
             sessionStorage.setItem('born', born_year);
             sessionStorage.setItem('note', note);
 
-
             $("#id").html(id);
             $("#name").html(name);
             $("#sex").html(sex);
             $("#status").html(status);
             $("#born_year").html(born_year);
             $("#plan").html(treatment_plan);
-            $("#note").html(note);
-
-
-            
+            $("#note").html(note);    
         },
         error:function(data){
             console.log(data);

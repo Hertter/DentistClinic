@@ -1,10 +1,12 @@
+var reqUrl = "http://dentist-clinic.com:8088/php/Case.php";
+
 // 遍历查询病例
 $(function load() {
     $.ajax({
         contentType:'application/x-www-form-urlencoded;charset=utf-8',
         type: "POST",
         dataType: "json",
-        url: "http://dentist-clinic.com:8088/php/Case.php",
+        url: reqUrl,
         data: {
             operate: "query",
         },
@@ -47,7 +49,7 @@ function addCase() {
         contentType:'application/x-www-form-urlencoded;charset=utf-8',
         type: "POST",
         dataType: "json",
-        url: "http://dentist-clinic.com:8088/php/Case.php",
+        url: reqUrl,
         data: $.param({operate: "add"})+'&'+addCaseForm,
         success: function (data) {
             console.log(data.result);
@@ -72,7 +74,7 @@ function delCase(id) {
             contentType:'application/x-www-form-urlencoded;charset=utf-8',
             type: "POST",
             dataType: "json",
-            url: "http://dentist-clinic.com:8088/php/Case.php",
+            url: reqUrl,
             data: {
                 operate:"delete",
                 id:id
