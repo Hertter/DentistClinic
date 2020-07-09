@@ -66,6 +66,49 @@ private $pass   = '你的密码';
 ### result值说明
 result表示当前回调的结果，当status为0时，会返回预期的数据；status为1时会返回错误信息；status为2时，会对当前情况进行说明
 
+## 牙医接口
+### 牙医登录
+ - url：http://dentist-clinic.com/php/Dentist.php
+ - form：这里为form-data格式，具体参数如下
+ ```text
+operate:login     // operate是调接口必备的参数，这里表示要请求登录操作
+username:1234     // 账户名参数
+password:1234     // 用户密码参数
+```
+ 
+### 牙医注册
+ - url：http://dentist-clinic.com/php/Dentist.php
+ - form：这里为form-data格式，具体参数如下
+ ```text
+operate:register  // operate是调接口必备的参数，这里表示要请求注册操作
+username:1234     // 账户名参数
+password:1234     // 用户密码参数
+sex:男            // 性别
+name:何梓涛       // 牙医名字
+location:xx诊所   // 所属诊所
+```
+
+### 牙医资料查询
+ - url：http://dentist-clinic.com/php/Dentist.php
+ - form：这里为form-data格式，具体参数如下
+ ```text
+operate:find      // operate是调接口必备的参数，这里表示要请求查询资料操作
+username:1234     // 账户名参数
+```
+ 
+### 牙医信息更新
+ - url：http://dentist-clinic.com/php/Dentist.php
+ - form：这里为form-data格式，具体参数如下
+ ```text
+operate:update    // operate是调接口必备的参数，这里表示要请求更新操作
+username:1234     // 账户名参数
+password:1234     // 用户密码参数
+sex:男            // 性别
+name:何梓涛       // 牙医名字
+location:xx诊所   // 所属诊所
+profile:简介      // 简介信息
+```
+
 ## 管理员接口
 ### 管理员注册
  - url：http://dentist-clinic.com/php/Admin.php
