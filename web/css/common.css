@@ -1,0 +1,58 @@
+.details-user{
+    margin: 5px;
+}
+
+.details{
+    padding: 1rem;
+}
+.information{
+    padding: 0.5rem 1rem;
+}
+.list-group-item.active{
+    background-color: #4c4641;
+}
+.workbench{
+    padding-bottom: 1rem;
+}
+.work-icon{
+    margin: 5px;
+}
+.photo{
+    color: #00CCFF;
+}
+.personData{
+    margin: 1rem;
+}
+.modifyData{
+    float: right;
+    font-size: 14px;
+    color: #3399ea;
+    cursor: pointer;
+}
+.personDetailData{
+    margin-left: 3rem;
+    margin-bottom: 1rem;
+}
+.switch{
+    display: none;
+}
+.cancel{
+    margin-right: 5px;
+}
+.fileInput{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    /* opacity: 0; */
+    display: block;
+    width: 5rem;
+    clear: both;
+    display: block;
+    margin: auto;
+    /* background-color: red; */
+}
+.orderManage{
+    margin-left: 20px;
+}

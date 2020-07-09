@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>修改病例</title>
+<title>个人资料</title>
 <!-- for-mobile-apps -->
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -18,9 +18,8 @@
     </script>
 	
 	<!-- css files -->
-	<link href="css/bootstrap.css" rel='stylesheet' type='text/css' /><!-- bootstrap css -->
-	<!-- <link href="css/bootstrap.min.css" rel='stylesheet' type='text/css' />bootstrap css -->
-	<link href="css/style.css" rel='stylesheet' type='text/css' /><!-- custom css -->
+    <link href="css/bootstrap.css" rel='stylesheet' type='text/css' /><!-- bootstrap css -->
+    <link href="css/style.css" rel='stylesheet' type='text/css' /><!-- custom css -->
 	<link href="css/font-awesome.min.css" rel="stylesheet"><!-- fontawesome css -->
     <link href="css/common.css" rel='stylesheet' type='text/css' /><!-- custom css -->
 	<!-- //css files -->
@@ -29,10 +28,10 @@
 	<link href="http://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i&amp;subset=cyrillic,cyrillic-ext,greek,greek-ext,latin-ext,vietnamese" rel="stylesheet">
 	<link href="http://fonts.googleapis.com/css?family=Dosis:200,300,400,500,600,700,800&amp;subset=latin-ext" rel="stylesheet">
 	<!-- //google fonts -->
-	
+	<script src="js/jquery-3.4.1.min.js"></script>
+	<script src="js/common.js"></script>
 </head>
 <body>
-
 <!-- top header -->
 <div class="header-top">
 	<div class="container">
@@ -64,8 +63,6 @@
 </div>
 <!-- //top header -->
 
-
-
 <!-- banner -->
 <div class="innerpage-banner" id="home">
 	<div class="inner-page-layer">
@@ -73,110 +70,127 @@
 </div>
 <!-- //banner -->
 
-
-<!-- gallery -->
-<section class="gallery py-5" id="gallery">
-	<div class="container col-9">
-		<h2 class="heading text-center mb-sm-5 mb-4">病例详情</h2>
-		
-		<section class="services details">
-			<div class="container">
-				<!-- <h4 class="heading text-center mb-5">图片</h3> -->
-				<form action="#">
-					<div class="details">
-						<tr>
-							<td>
-								<a href="#" class="col-3">
-									<img class="media-object" src="images/default-avatar.png" alt="...">
-								</a>
-							</td>
-							<td>
-								<div class="form-group">
-									<label for="exampleInputName">姓名</label>
-									<input type="text" class="form-control" placeholder="张三">
+<!-- contact -->
+<section class="mail pt-lg-5 pt-4">
+	<div class="container pt-lg-5">
+		<h2 class="heading text-center mb-sm-5 mb-4">工作台</h2>
+		<div class="row">
+			<div class="col-lg-2 col-sm-3 col-md-2">
+				<div class="list-group">
+					<a href="caseManage.html" class="list-group-item" name="manage">管理病例</a>
+					<a href="caseAdd.html" class="list-group-item" name="add">
+						创建病例
+					</a>
+					<a href="caseOrder.html" class="list-group-item" name="order">
+						订单管理
+					</a>
+					<a href="personData.html" class="list-group-item active" name="person">
+						个人资料
+					</a>
+				  </div>
+			</div>
+			<div class="col-lg-10 col-sm-9 col-md-2">
+				<div class="col-lg-12 agileinfo_mail_grid_right personData">
+					<div class="container">
+						 <div class="row team_grids">
+							<div class="col-lg-12 col-sm-6">
+							<div class="col-lg-3 col-sm-6 mx-auto">
+								<div class="team-member">
+									<div class="team-img">
+										<img src="images/t4.jpg" alt="team member" class="img-fluid" id="img-txz">
+										
+									</div>
+									<div class="team-hover">
+										<div class="desk">
+											<h5>安医生</h4>
+											<p>Dentist Clinic<br>诊所主任医师.</p>
+										</div>
+										<div class="s-link col-12">
+											<a href="#">
+												<input type="file" accept="image/*" id="file-txz" name="file" onchange="upload('#file-txz', '#img-txz');"  class="fileInput"/>
+											</a>
+							
+										</div>
+									</div>
 								</div>
-							</td>
-						</tr>	
+								<!-- <div class="team-title">
+									<h5>Linda Anderson</h5>
+									<span>Dentist_Clinic诊所 主任医师</span>
+								</div> -->
+							</div>
+						</div>
+						<div class="col-12">
+							<div class="modifyData" id="modifyData">
+								<a href="#"><span>修改资料</span></a>
+							</div>
+							<hr class="col-8">
+							<div class="personDetailData" id="personDetailData">
+								<div class="row">
+									<b>姓名：</b>
+									<span id="name">Linda Anderson</span>
+								</div>
+								<div class="row">
+									<b>性别：</b>
+									<span>女</span>
+								</div>
+								<div class="row">
+									<b>账号：</b>
+									<span>13511111111</span>
+								</div>
+								<div class="row">
+									<b>密码：</b>
+									<span>********</span>
+								</div>
+								<div class="row">
+									<b>所属诊所：</b>
+									<span>Dentist Clinic诊所</span>
+								</div>
+								<div class="row">
+									<b>简介：</b>
+									<text name="" id="" cols="30" rows="10">
+										这个人很懒，什么也没留下...
+									</text>
+								</div>
+							</div>
 
-						<div class="form-group">
-							<label for="exampleInputSex">性别</label>
-							<input type="text" class="form-control" placeholder="男">
-						</div>
-						<div class="form-group">
-							<label for="exampleInputBirth">出生年月</label>
-							<input type="text" class="form-control" placeholder="2020-7">
-						</div>
-						<div class="form-group">
-							<label for="exampleInputNote">备注</label>
-							<input type="text" class="form-control" placeholder="无">
-						</div>
-						<div class="form-group">
-							<label for="exampleInputStatus">当前状态</label>
-							<input type="text" class="form-control" placeholder="已出院">
-						</div>
-				</form>
-				
-				</div>
-				<hr>
-				<h5>患者图片：</b>
-				<div class="col-lg-12 col-md-12 mt-12">
-					<div class="row offer-grids">
-						<div class="col-lg-2 col-md-6 mt-4">
-							<img src="images/tooth.png" alt="">
-						</div>
-						<div class="col-lg-2 col-md-6 mt-4">
-							<img src="images/tooth.png" alt="">
-						</div>
-						<div class="col-lg-2 col-md-6 mt-4">
-							<img src="images/tooth.png" alt="">
-						</div>
-						<div class="col-lg-2 col-md-6 mt-4">
-							<img src="images/tooth.png" alt="">
-						</div>
-						<div class="col-lg-2 col-md-6 mt-4">
-							<img src="images/tooth.png" alt="">
-						</div>
-						<div class="col-lg-2 col-md-6 mt-4">
-							<img src="images/tooth.png" alt="">
-						</div>
-						<div class="col-lg-2 col-md-6 mt-4">
-							<img src="images/tooth.png" alt="">
-						</div>
-						<div class="col-lg-2 col-md-6 mt-4">
-							<img src="images/tooth.png" alt="">
+							<div class="personModifyData switch" id="personModifyData">
+								<div class="row">
+									<b>姓名：</b>
+									<input type="text" class="form-control" placeholder="Linda Anderson">
+								</div>
+								<div class="row">
+									<b>性别：</b>
+									<input type="text" class="form-control" placeholder="女">
+								</div>
+								<div class="row">
+									<b>账号：</b>
+									<input type="text" class="form-control" placeholder="13511111111">
+								</div>
+								<div class="row">
+									<b>密码：</b>
+									<input type="text" class="form-control" placeholder="********">
+								</div>
+								<div class="row">
+									<b>所属诊所：</b>
+									<input type="text" class="form-control" placeholder="Dentist Clinic诊所">
+								</div>
+								<div class="row" style="margin-bottom: 1rem;">
+									<b>简介：</b>
+									<textarea name="" id="" cols="30" rows="10">这个人很懒，什么也没留下...</textarea>
+								</div>
+								<button type="submit" class="btn btn-default pull-right">修改</button>
+								<button type="button" class="btn btn-default pull-right cancel" id="cancel" style="background: gray;">取消</button>
+							</div>
+							
 						</div>
 					</div>
-				</div>					
-			</div>
-		</section>
-		<!-- //services -->	
-
-		<div class="media-body details">
-		  <div class="form-group" id="question-editor">
-			  	<div class="row">
-					  <label for="description"><h3>具体病况：</h3></label>
 				</div>
-				<textarea name="description" id="description" class="form-control" cols="30" rows="10" autocomplete="on">
-					B4（牙合）面畸形中央尖，已完全磨损，露髓，探痛（++），冷痛（++），松动（-）。行全口常规检查发现E3E4滞留；
-					A3弓外牙，腭侧完全萌出；A4未见，E4颊侧牙龈可见隆起明显，触之较硬，无压痛。
-					A3A4区牙片及全口CT示：E3牙根短小，E4牙根吸收至颈部，A4完全埋藏于骨内，根尖紧贴于上颌窦底。
-				</textarea>
-				<div class="row">
-					<label for="description"><h3>专家方案：</h3></label>
-				</div>
-				<textarea name="description" id="description" class="form-control" cols="30" rows="10" autocomplete="on">
-					B4（牙合）面畸形中央尖，已完全磨损，露髓，探痛（++），冷痛（++），松动（-）。行全口常规检查发现E3E4滞留；
-					A3弓外牙，腭侧完全萌出；A4未见，E4颊侧牙龈可见隆起明显，触之较硬，无压痛。
-					A3A4区牙片及全口CT示：E3牙根短小，E4牙根吸收至颈部，A4完全埋藏于骨内，根尖紧贴于上颌窦底。
-				</textarea>
 			</div>
-		</div>
-		<div class="login-icon pull-right">
-			<a href="caseDetails.html"> 确认修改</a>
 		</div>
 	</div>
+	
 </section>
-<!-- //gallery -->
+<!-- //contact -->
 
 <!-- footer -->
 <footer class="py-5">

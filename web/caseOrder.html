@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>添加病例</title>
+<title>发起订单</title>
 <!-- for-mobile-apps -->
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -28,7 +28,10 @@
 	<link href="http://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i&amp;subset=cyrillic,cyrillic-ext,greek,greek-ext,latin-ext,vietnamese" rel="stylesheet">
 	<link href="http://fonts.googleapis.com/css?family=Dosis:200,300,400,500,600,700,800&amp;subset=latin-ext" rel="stylesheet">
 	<!-- //google fonts -->
-	
+	<script src="/DentistClinic/web/js/common.js"></script>
+	<script src="https://cdn.staticfile.org/jquery/3.2.1/jquery.min.js"></script>
+  	<script src="https://cdn.staticfile.org/popper.js/1.15.0/umd/popper.min.js"></script>
+	<script src="https://cdn.staticfile.org/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
 </head>
 <body>
 <!-- top header -->
@@ -73,86 +76,131 @@
 <section class="mail pt-lg-5 pt-4">
 	<div class="container pt-lg-5">
 		<h2 class="heading text-center mb-sm-5 mb-4">工作台</h2>
-		<div class="row workbench">
+		<div class="row">
 			<div class="col-lg-2 col-sm-3 col-md-2">
 				<div class="list-group">
 					<a href="caseManage.html" class="list-group-item" name="manage">管理病例</a>
-					<a href="caseAdd.html" class="list-group-item active" name="add">
+					<a href="caseAdd.html" class="list-group-item" name="add">
 						创建病例
 					</a>
-					<a href="caseOrder.html" class="list-group-item" name="order">
-						订单管理
+					<a href="caseOrder.html" class="list-group-item active" name="order">
+                        订单管理
 					</a>
-					<a href="personData.html" class="list-group-item" name="person">
-						个人资料
-					</a>
+                    <a href="personData.html" class="list-group-item" name="person">
+                        个人资料
+                    </a>
 				  </div>
 			</div>
-			<div class="col-lg-10 col-sm-9 col-md-2">
-				<div class="col-lg-12 agileinfo_mail_grid_right">
-					<form>
-						<div class="form-group">
-						  <label for="exampleInputName">姓名</label>
-						  <input type="text" class="form-control" placeholder="姓名">
+			<div id="main" class="col-lg-10">
+				<div class="row">
+					<h5 class="heading text-center orderManage">订单管理</h5>
+				</div>
+				<table class="table table-striped" style="width: 60rem; margin: 20px auto; text-align: center;border: 1px solid #0ab4f7;">
+					<thead>
+					<tr>
+						<th scope="col">编号</th>
+						<th scope="col">病例</td>
+						<th scope="col">发起人</td>
+						<th scope="col">操作</td>
+					</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<th scope="row">1</th>
+							<td>
+								<div><a href="caseDetails.html">古力娜扎</a></div>
+							</td>
+							<td>安医生</td>
+							<td>
+								<a class="btn btn-warning btn-small" href="#">删除</a>
+								<a class="btn btn-primary btn-small" href="#" data-toggle="modal" data-target="#expertsPlan">查看</a>
+							</td>
+							
+						</tr>
+						<tr>
+							<th scope="row">2</th>
+							<td>
+								<div><a href="caseDetails.html">迪丽热巴</a></div>
+							</td>
+							<td>安医生</td>
+							<td>
+								<a class="btn btn-warning btn-small" href="#">删除</a>
+								<a class="btn btn-primary btn-small" href="#" data-toggle="modal" data-target="#expertsPlan">查看</a>
+							</td>
+						</tr>
+						<tr>
+							<th scope="row">3</th>
+							<td>
+								<div><a href="caseDetails.html">马尔扎哈</a></div>
+							</td>
+							<td>安医生</td>
+							<td>
+								<a class="btn btn-warning btn-small" href="#">删除</a>
+								<a class="btn btn-primary btn-small" href="#" data-toggle="modal" data-target="#expertsPlan">查看</a>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+				<div>
+					<div class="pull-right" style="margin-right: 5px;">
+						<button type="button" class="btn btn-danger btn-block" href="#" data-toggle="modal" data-target="#orderModal">添加订单</button>
+					</div>
+				</div>
+
+				<!-- 添加订单模态框 -->
+				<div class="modal fade" id="orderModal">
+					<div class="modal-dialog modal-lg">
+						<div class="modal-content">
+						  <!-- 模态框头部 -->
+						  <div class="modal-header">
+							<h5 class="modal-title">发起订单</h5>
+							<button type="button" class="close" data-dismiss="modal">&times;</button>
+						  </div>
+						  <form>
+							<div class="form-group" style="margin: 1rem;">
+							  <label for="case-name" class="control-label">病例:</label>
+							  <input type="text" class="form-control" id="case-name">
+							</div>
+							<div class="form-group" style="margin: 1rem;">
+							  <label for="sendPerson" class="control-label">发起人:</label>
+							  <input type="text" class="form-control" id="sendPerson">
+							</div>
+						  </form>
+						  <!-- 模态框底部 -->
+						  <div class="modal-footer">
+							<button type="button" class="btn btn-secondary" data-dismiss="modal">关闭</button>
+							<button type="submit" class="btn btn-secondary" style="background:#007bff" data-dismiss="modal">提交</button>
+						  </div>						 
 						</div>
-						<div class="form-group">
-						  <label for="exampleInputSex">性别</label>
-						  <input type="text" class="form-control" placeholder="性别">
+					  </div>
+				</div>
+				<!-- 查看专家方案模态框 -->
+				<div class="modal fade" id="expertsPlan">
+					<div class="modal-dialog modal-lg">
+						<div class="modal-content">
+						  <!-- 模态框头部 -->
+						  <div class="modal-header">
+							<h5 class="modal-title">查看</h5>
+							<button type="button" class="close" data-dismiss="modal">&times;</button>
+						  </div>
+						  <form>
+							<div class="form-group" style="margin: 1rem;">
+								<div class="form-group">
+									<label for="plan" class="control-label">专家方案:</label>
+									<text class="form-control" id="plan" cols="30" rows="10">
+										B4（牙合）面畸形中央尖，已完全磨损，露髓，探痛（++），冷痛（++），松动（-）。行全口常规检查发现E3E4滞留；<br>
+										A3弓外牙，腭侧完全萌出；A4未见，E4颊侧牙龈可见隆起明显，触之较硬，无压痛。<br>
+										A3A4区牙片及全口CT示：E3牙根短小，E4牙根吸收至颈部，A4完全埋藏于骨内，根尖紧贴于上颌窦底。<br>
+									</text>
+								</div>
+							</div>
+						  </form>
+						  <!-- 模态框底部 -->
+						  <div class="modal-footer">
+							<button type="button" class="btn btn-secondary" style="background:#007bff" data-dismiss="modal">确认</button>
+						  </div>						 
 						</div>
-						<div class="form-group">
-							<label for="exampleInputBirth">出生年月</label>
-							<input type="text" class="form-control" placeholder="出生年月">
-						</div>
-						<div class="form-group">
-							<label for="exampleInputStatus">当前状态</label>
-							<input type="text" class="form-control" placeholder="当前状态">
-						</div>
-						<div class="form-group">
-							<label for="exampleInputNote">备注</label>
-							<input type="text" class="form-control" placeholder="备注">
-						</div>
-						<div class="form-group">
-						  <label for="exampleInputFile">上传<span class="photo">正面像</span></label>
-						  <input type="file" id="exampleInputFile">
-						</div>
-						<div class="form-group">
-							<label for="exampleInputFile">上传<span class="photo">正面微笑像</span></label>
-							<input type="file" id="exampleInputFile">
-						</div>
-						<div class="form-group">
-							<label for="exampleInputFile">上传<span class="photo">口内左侧位像</span></label>
-							<input type="file" id="exampleInputFile">
-						</div>
-						<div class="form-group">
-							<label for="exampleInputFile">上传<span class="photo">口内右侧位像</span></label>
-							<input type="file" id="exampleInputFile">
-						</div>
-						<div class="form-group">
-							<label for="exampleInputFile">上传<span class="photo">口内正位像</span></label>
-							<input type="file" id="exampleInputFile">
-						</div>
-						<div class="form-group">
-							<label for="exampleInputFile">上传<span class="photo">上牙列像</span></label>
-							<input type="file" id="exampleInputFile">
-						</div>
-						<div class="form-group">
-							<label for="exampleInputFile">上传<span class="photo">下牙列像</span></label>
-							<input type="file" id="exampleInputFile">
-						</div>
-						<div class="form-group">
-							<label for="exampleInputFile">上传<span class="photo">全颌曲面断层片</span></label>
-							<input type="file" id="exampleInputFile">
-						</div>
-						<div class="form-group">
-							<label for="exampleInputFile">上传<span class="photo">头颅侧位定位片</span></label>
-							<input type="file" id="exampleInputFile">
-						</div>
-						<div class="form-group">
-							<label for="exampleInputTreatment">治疗方案</label>
-							<textarea name="Treatment" id="Treatment" cols="30" rows="10" placeholder="描述治疗方案..."></textarea>
-						</div>
-						<button type="submit" class="btn btn-default pull-right">添加</button>
-					  </form>
+					  </div>
 				</div>
 			</div>
 		</div>
