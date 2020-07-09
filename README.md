@@ -29,7 +29,7 @@ private $pass   = '你的密码';
 </VirtualHost>
 ```
 **代码说明**：
-上面配置了一个`dentist-clinic.com`假的域名，其绝对路径为`D:\GitHub\DentistClinic\php`，这里的路径就是项目的路径，这里具体到php文件夹  
+上面配置了一个`dentist-clinic.com`假的域名，其绝对路径为`D:\GitHub\DentistClinic`，这里的路径就是项目的路径 
 ### 添加host映射
 打开host文件，目录在`C:\Windows\System32\drivers\etc`中，在文件最后一行添加下面的映射关系：
 ```text
