@@ -28,7 +28,10 @@
 	<link href="http://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i&amp;subset=cyrillic,cyrillic-ext,greek,greek-ext,latin-ext,vietnamese" rel="stylesheet">
 	<link href="http://fonts.googleapis.com/css?family=Dosis:200,300,400,500,600,700,800&amp;subset=latin-ext" rel="stylesheet">
 	<!-- //google fonts -->
-	<script src="/js/common.js"></script>
+	<script src="js/common.js"></script>
+	<script src="https://cdn.staticfile.org/jquery/3.2.1/jquery.min.js"></script>
+  	<script src="https://cdn.staticfile.org/popper.js/1.15.0/umd/popper.min.js"></script>
+	<script src="https://cdn.staticfile.org/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
 	
 </head>
 <body>
@@ -78,15 +81,8 @@
 			<div class="col-lg-2 col-sm-3 col-md-2">
 				<div class="list-group">
 					<a href="caseManage.html" class="list-group-item active" name="manage">管理病例</a>
-					<a href="caseAdd.html" class="list-group-item" name="add">
-						创建病例
-					</a>
-					<a href="caseOrder.html" class="list-group-item" name="order">
-						订单管理
-					</a>
-					<a href="personData.html" class="list-group-item" name="person">
-						个人资料
-					</a>
+					<a href="caseOrder.html" class="list-group-item" name="order">订单管理</a>
+					<a href="personData.html" class="list-group-item" name="person">个人资料</a>
 				  </div>
 			</div>
 			<div class="col-lg-10 col-sm-9 col-md-2">
@@ -101,6 +97,7 @@
 							</div>
 							<div class="media-body">
 							  <h4 class="media-heading"><a href="caseDetails.html?id=">迪丽热巴</a></h4>
+							  <b>编号：1</b><br>
 							  病例详情:<br>&emsp;&emsp;PE：B4（牙合）面畸形中央尖，已完全磨损，露髓，探痛（++），冷痛（++），松动（-）。行全口常规检查发现E3E4滞留；A3弓外牙，腭侧完全萌出；A4未见，E4颊侧牙龈可见隆起明显，触之较硬，无压痛。 A3A4区牙片及全口CT示：E3牙根短小，E4牙根吸收至颈部，A4完全埋藏于骨内，根尖紧贴于上颌窦底。
 							</div>
 							<div class="login-icon work-icon">
@@ -116,6 +113,7 @@
 							</div>
 							<div class="media-body">
 								<h4 class="media-heading"><a href="caseDetails.html?id=">古力娜扎</a></h4>
+								<b>编号：2</b><br>
 							  病例详情:<br>&emsp;&emsp;PE：B4（牙合）面畸形中央尖，已完全磨损，露髓，探痛（++），冷痛（++），松动（-）。行全口常规检查发现E3E4滞留；A3弓外牙，腭侧完全萌出；A4未见，E4颊侧牙龈可见隆起明显，触之较硬，无压痛。 A3A4区牙片及全口CT示：E3牙根短小，E4牙根吸收至颈部，A4完全埋藏于骨内，根尖紧贴于上颌窦底。
 							</div>
 							<div class="login-icon work-icon">
@@ -131,6 +129,7 @@
 							</div>
 							<div class="media-body">
 								<h4 class="media-heading"><a href="caseDetails.html?id=">马尔扎哈</a></h4>
+								<b>编号：3</b><br>
 							  病例详情:<br>&emsp;&emsp;PE：B4（牙合）面畸形中央尖，已完全磨损，露髓，探痛（++），冷痛（++），松动（-）。行全口常规检查发现E3E4滞留；A3弓外牙，腭侧完全萌出；A4未见，E4颊侧牙龈可见隆起明显，触之较硬，无压痛。 A3A4区牙片及全口CT示：E3牙根短小，E4牙根吸收至颈部，A4完全埋藏于骨内，根尖紧贴于上颌窦底。
 							</div>
 							<div class="login-icon work-icon">
@@ -146,6 +145,7 @@
 							</div>
 							<div class="media-body">
 								<h4 class="media-heading"><a href="caseDetails.html?id=">张三</a></h4>
+								<b>编号：4</b><br>
 							  病例详情:<br>&emsp;&emsp;PE：B4（牙合）面畸形中央尖，已完全磨损，露髓，探痛（++），冷痛（++），松动（-）。行全口常规检查发现E3E4滞留；A3弓外牙，腭侧完全萌出；A4未见，E4颊侧牙龈可见隆起明显，触之较硬，无压痛。 A3A4区牙片及全口CT示：E3牙根短小，E4牙根吸收至颈部，A4完全埋藏于骨内，根尖紧贴于上颌窦底。
 							</div>
 							<div class="login-icon work-icon">
@@ -161,13 +161,63 @@
 							</div>
 							<div class="media-body">
 								<h4 class="media-heading"><a href="caseDetails.html?id=">李四</a></h4>
+								<b>编号：5</b><br>
 							  病例详情:<br>&emsp;&emsp;PE：B4（牙合）面畸形中央尖，已完全磨损，露髓，探痛（++），冷痛（++），松动（-）。行全口常规检查发现E3E4滞留；A3弓外牙，腭侧完全萌出；A4未见，E4颊侧牙龈可见隆起明显，触之较硬，无压痛。 A3A4区牙片及全口CT示：E3牙根短小，E4牙根吸收至颈部，A4完全埋藏于骨内，根尖紧贴于上颌窦底。
 							</div>
 							<div class="login-icon work-icon">
 								<a href="#"> 删除</a>
 							</div>
 						</div>
+						<div>
+							<div class="pull-right" style="margin: 1rem;">
+								<button type="button" class="btn btn-danger btn-block" href="#" data-toggle="modal" data-target="#caseAddModal">创建病例</button>
+							</div>
+						</div>
 						<br>
+
+								<!-- 添加订单模态框 -->
+						<div class="modal fade" id="caseAddModal">
+							<div class="modal-dialog modal-lg">
+								<div class="modal-content">
+								<!-- 模态框头部 -->
+								<div class="modal-header">
+									<h5 class="modal-title">创建病例</h5>
+									<button type="button" class="close" data-dismiss="modal">&times;</button>
+								</div>
+								<form>
+									<div class="form-group modelForm">
+									  <label for="exampleInputName">姓名</label>
+									  <input type="text" class="form-control" placeholder="姓名">
+									</div>
+									<div class="form-group modelForm">
+									  <label for="exampleInputSex">性别</label>
+									  <input type="text" class="form-control" placeholder="性别">
+									</div>
+									<div class="form-group modelForm">
+										<label for="exampleInputBirth">出生年月</label>
+										<input type="text" class="form-control" placeholder="出生年月">
+									</div>
+									<div class="form-group modelForm">
+										<label for="exampleInputStatus">当前状态</label>
+										<input type="text" class="form-control" placeholder="当前状态">
+									</div>
+									<div class="form-group modelForm">
+										<label for="exampleInputNote">备注</label>
+										<input type="text" class="form-control" placeholder="备注">
+									</div>
+									<div class="form-group modelForm">
+										<label for="exampleInputTreatment">治疗方案</label>
+										<textarea name="Treatment" id="Treatment" cols="30" rows="10" placeholder="描述治疗方案..."></textarea>
+									</div>
+								  </form>
+								<!-- 模态框底部 -->
+								<div class="modal-footer">
+									<button type="button" class="btn btn-secondary" data-dismiss="modal">关闭</button>
+									<button type="submit" class="btn btn-secondary" style="background:#007bff" data-dismiss="modal">提交</button>
+								</div>						 
+								</div>
+							</div>
+						</div>
 					</div>
 				</div>
 			</div>
