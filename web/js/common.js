@@ -1,5 +1,5 @@
 //请求路径
-var reqUrl = "http://dentist-clinic.com:8088/php/Case.php";
+var reqUrl = "http://dentist-clinic.com/php/Case.php";
 //跳转路径
 var jumpModify = "http://dentist-clinic.com:8080/web/caseModify.html?";
 var jumpDetail = "http://dentist-clinic.com:8080/web/caseDetails.html?";
