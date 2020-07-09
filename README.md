@@ -23,7 +23,7 @@ private $pass   = '你的密码';
 找到apache目录下的`httpd-vhosts.conf`文件，一般位于`Apache\conf\extra`目录下，在文件最后新增下面的代码（建议修改前先拷贝文件副本）：
 ```apacheconfig
 <VirtualHost dentist-clinic.com:80>
-    DocumentRoot "D:\GitHub\DentistClinic\php"
+    DocumentRoot "D:\GitHub\DentistClinic"
     ServerName dentist-clinic.com
     ServerAlias www.dentist-clinic.com
 </VirtualHost>
@@ -36,11 +36,11 @@ private $pass   = '你的密码';
 127.0.0.1 dentist-clinic.com
 ```
 ### 重启Apache
-重启phpstudy或者wamp，在浏览器输入`http://dentist-clinic.com/Test.php`，不出意外的话，会出现一下的内容：
+重启phpstudy或者wamp，在浏览器输入`http://dentist-clinic.com/php/Test.php`，不出意外的话，会出现一下的内容：
 ```text
 {"status":0,"result":"\u65e0\u53c2\u8bf7\u6c42\u6d4b\u8bd5\u6210\u529f"}
 ```
-即表示配置成功。
+浏览器输入`http://dentist-clinic.com/web/index.html`，可以看到牙医主页，即表示配置成功。
 
 ## 接口说明
 ### 请求格式
@@ -68,7 +68,7 @@ result表示当前回调的结果，当status为0时，会返回预期的数据�
 
 ## 管理员接口
 ### 管理员注册
- - url：http://dentist-clinic.com/Admin.php
+ - url：http://dentist-clinic.com/php/Admin.php
  - form：这里为form-data格式，具体参数如下
  ```text
 operate:register  // operate是调接口必备的参数，这里表示要请求注册操作
@@ -77,7 +77,7 @@ password:1234     // 用户密码参数
 ```
  
 ### 管理员登录
- - url：http://dentist-clinic.com/Admin.php
+ - url：http://dentist-clinic.com/php/Admin.php
  - form：这里为form-data格式，具体参数如下
  ```text
 operate:login     // operate是调接口必备的参数，这里表示要请求登录操作
@@ -86,7 +86,7 @@ password:1234     // 用户密码参数
 ```
 
 ### 管理员删除
- - url：http://dentist-clinic.com/Admin.php
+ - url：http://dentist-clinic.com/php/Admin.php
  - form：这里为form-data格式，具体参数如下
  ```text
 operate:delete    // operate是调接口必备的参数，这里表示要请求删除操作
@@ -95,7 +95,7 @@ password:1234     // 用户密码参数
 ```
  
 ### 管理员更新
- - url：http://dentist-clinic.com/Admin.php
+ - url：http://dentist-clinic.com/php/Admin.php
  - form：这里为form-data格式，具体参数如下
  ```text
 operate:update    // operate是调接口必备的参数，这里表示要请求更新操作
@@ -106,14 +106,14 @@ new_password:1235 // 新的用户密码参数
  
 ## 病例接口
 ### 查询所有病例
- - url：http://dentist-clinic.com/Case.php
+ - url：http://dentist-clinic.com/php/Case.php
  - form：这里为form-data格式，具体参数如下
  ```text
 operate:query     // operate是调接口必备的参数，这里表示要请求查询所有病例操作
 ```
  
 ### 查询指定id的病例
- - url：http://dentist-clinic.com/Case.php
+ - url：http://dentist-clinic.com/php/Case.php
  - form：这里为form-data格式，具体参数如下
  ```text
 operate:find      // operate是调接口必备的参数，这里表示要请求查询指定id病例操作
@@ -121,7 +121,7 @@ id:1              // 病例id
 ```
 
 ### 病例添加
- - url：http://dentist-clinic.com/Case.php
+ - url：http://dentist-clinic.com/php/Case.php
  - form：这里为form-data格式，具体参数如下
  ```text
 operate:add       // operate是调接口必备的参数，这里表示要请求添加病例操作
@@ -134,7 +134,7 @@ treatment_plan:xx // 治疗方案
 ```
  
 ### 病例删除
- - url：http://dentist-clinic.com/Case.php
+ - url：http://dentist-clinic.com/php/Case.php
  - form：这里为form-data格式，具体参数如下
  ```text
 operate:delete    // operate是调接口必备的参数，这里表示要请求删除指定id病例操作
@@ -142,7 +142,7 @@ id:1              // 病例id
 ```
  
 ### 病例修改
- - url：http://dentist-clinic.com/Case.php
+ - url：http://dentist-clinic.com/php/Case.php
  - form：这里为form-data格式，具体参数如下
  ```text
 operate:update    // operate是调接口必备的参数，这里表示要请求更新病例操作
