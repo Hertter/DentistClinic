@@ -6,6 +6,7 @@
  * Role: 病例的数据接口
  */
 
+header('Access-Control-Allow-Origin:*');
 require_once 'PDOO.php';
 date_default_timezone_set('Asia/Shanghai');
 
@@ -179,4 +180,4 @@ switch ($function_name){
 }
 
 // 返回给客户端
-print_r(json_encode($result));
+print_r(json_encode($result, JSON_UNESCAPED_UNICODE));
