@@ -71,9 +71,9 @@ class Dentist extends PDOO {
                 'sex'      => $sex,
                 'name'     => $name,
                 'location' => $location,
-                'password' => $password
+                'password' => $password,
+                'profile'  => ''
             ], 'doctor');
-            print_r($result_insert);
             if ($result_insert['status'] === 0) {
                 $result_find['status'] = 0;
                 $result_find['result'] = '注册成功';
