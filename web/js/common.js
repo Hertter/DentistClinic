@@ -3,6 +3,7 @@ var reqUrl = "http://dentist-clinic.com:8088/php/Case.php";
 //跳转路径
 var jumpModify = "http://dentist-clinic.com:8080/web/caseModify.html?";
 var jumpDetail = "http://dentist-clinic.com:8080/web/caseDetails.html?";
+var jumpIndex = "http://dentist-clinic.com:8080/web/index.html";
 
 // 修改资料切换
 $(document).ready(function(){
@@ -31,6 +32,13 @@ var upload = function (c, d) {
         $d.setAttribute("src", e.target.result);
     };
 };
+
+// 返回首页
+function backIndex() {
+    if (confirm("是否要退出登录，并返回首页？")) {
+        window.location.href=jumpIndex;
+    }
+}
 
 //跳转修改页面
 function caseModify() {
