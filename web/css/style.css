@@ -29,8 +29,8 @@ a:hover {
 input[type="button"],
 input[type="submit"],
 input[type="text"],
-input[type="email"],
 input[type="password"],
+input[type="email"],
 input[type="search"] {
     transition: 0.5s all;
     -webkit-transition: 0.5s all;
@@ -249,7 +249,10 @@ li > a:only-child:after { content: ''; }
 	}
 	.login-icon {
 		display: inline-block;
-	}
+    }
+    .commit{
+        margin-top: 5px;
+    }
 	nav {
 		margin: 0;
 	}
@@ -916,7 +919,7 @@ footer,.copyright{
     list-style-type: none;
 }
 
-.footer-grids input[type="password"] {
+.footer-grids input[type="email"] {
     background: #fff;
     box-shadow: none !important;
     padding: 12px 15px;
@@ -927,8 +930,7 @@ footer,.copyright{
 	letter-spacing: 1px;
     outline: none;
 }
-
-.footer-grids input[type="email"] {
+.footer-grids input[type="password"] {
     background: #fff;
     box-shadow: none !important;
     padding: 12px 15px;
@@ -1283,7 +1285,7 @@ ul.blog-icons i {
 .tech-btm {
     margin-bottom: 2em;
 }
-.tech-btm input[type="password"] {
+.tech-btm input[type="email"] {
       width: 100%;
     color: #737070;
     outline: none;
@@ -1295,7 +1297,7 @@ ul.blog-icons i {
     margin: 1em 0;
     border-radius: 0px;
 }
-.tech-btm input[type="email"] {
+.tech-btm input[type="password"] {
       width: 100%;
     color: #737070;
     outline: none;
@@ -1556,8 +1558,8 @@ h5.mt-0 {
 }
 
 .comment-top input[type="text"],
-.comment-top input[type="password"],
 .comment-top input[type="email"],
+.comment-top input[type="password"],
 .comment-top textarea {
     background: none;
     width: 100%;
@@ -1605,7 +1607,7 @@ h5.mt-0 {
     background: #333;
 }
 
-.single-gd form input[type="password"] {
+.single-gd form input[type="email"] {
     outline: none;
     padding: 12px 15px;
     font-size: 13px;
@@ -1618,7 +1620,7 @@ h5.mt-0 {
     border-radius: 0;
 }
 
-.single-gd form input[type="email"] {
+.single-gd form input[type="password"] {
     outline: none;
     padding: 12px 15px;
     font-size: 13px;
@@ -2151,7 +2153,7 @@ a.move-top span{
 	.map iframe {
 		min-height: 300px;
 	}
-	.footer-grids input[type="email"],.footer-grids input[type="submit"] {
+	.footer-grids input[type="email"], .footer-grids input[type="password"], .footer-grids input[type="submit"] {
 		font-size: 14px;
 	}
 	.login-icon a, .login-icon a:hover {
@@ -2277,7 +2279,7 @@ a.move-top span{
 	.blog-grid-top h3 a, .two-blog2 h3 a, h5.card-title a {
 		font-size: 20px;
 	}
-	.agileinfo_mail_grid_right input[type="text"], .agileinfo_mail_grid_right input[type="email"], .agileinfo_mail_grid_right textarea {
+	.agileinfo_mail_grid_right input[type="text"], .agileinfo_mail_grid_right input[type="password"], .agileinfo_mail_grid_right input[type="email"], .agileinfo_mail_grid_right textarea {
         font-size: 14px;
 	}
 	.agileinfo_mail_grid_right textarea {

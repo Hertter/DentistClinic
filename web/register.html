@@ -6,8 +6,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="keywords" content="" />
+<script src="./js/jquery-3.4.1.min.js"></script>
 <script src="./js/vue.js"></script>
-<script src="./js/vueapp.js"></script>
     <script>
         addEventListener("load", function () {
             setTimeout(hideURLbar, 0);
@@ -44,17 +44,17 @@
 					</li>
 					<li>
 						<span class="fa fa-phone"></span>
-						<p class="d-inline">Call Us +12 345 678</p>
+						<p class="d-inline">联系我们 +12 345 678</p>
 					</li>
 				</ul>
 			</div>
 			<div class="col-sm-6 header-right-w3_pvt">
 				<ul class="d-lg-flex header-w3_pvt justify-content-lg-end">
 					<li class="mr-lg-3">
-						<span class=""><span class="fa fa-clock-o"></span>Mon - Fri : 8:30am to 9:30pm</span>
+						<span class=""><span class="fa fa-clock-o"></span>周一到周五 : 8:30am to 9:30pm</span>
 					</li>
 					<li class="">
-						<span class=""><span class="fa fa-clock-o"></span>Sat & Sun : 9:00am to 6:00pm</span>
+						<span class=""><span class="fa fa-clock-o"></span>周六和周日 : 9:00am to 6:00pm</span>
 					</li>
 				</ul>
 			</div>
@@ -83,9 +83,6 @@
 			<div class="login-icon ml-2">
 				<a class="user" href="login.html"> 登陆 / 注册</a>			
 			</div>
-			<div class="login-icon ml-2">
-				<a class="user" href="contact.html"> 现在预订 / 联系我们</a>
-			</div>
 		</nav>
 		<div class="clear"></div>
 		<!-- //nav -->
@@ -106,38 +103,21 @@
 		<h2 class="heading text-center mb-sm-5 mb-4">登陆 / 注册 </h2>
 		<div class="row agileinfo_mail_grids">
 			<div class="col-lg-12 agileinfo_mail_grid_right">
-				<form action="#" method="post">
+				<form name="register_form"  method="post">
 					<div class="row">
 						<div class="col-md-6 wthree_contact_left_grid pr-md-0">
 							<div class="form-group">
 								<input type="text" name="name" class="form-control" placeholder="账号(长度6~20)" required="">
 							</div>
-
 						</div>
 						<div class="col-md-6 wthree_contact_left_grid pr-md-0">
 							<div class="form-group">
 								<input type="password" name="password" class="form-control" placeholder="密码(长度6~15)" required="">
 							</div>
 						</div>
-						<div class="col-md-6  wthree_contact_left_grid pr-md-0">
-							<div class="form-group">
-								<input type="text" name="place" class="form-control" placeholder="工作地址" required="">
-							</div>
-						</div>
-						<div class="col-md-6  wthree_contact_left_grid pr-md-0">
-							<div class="form-group">
-								<input type="text" name="work" class="form-control" placeholder="主要职业" required="">
-							</div>
-						</div>
-						<div class="col-md-12">
-							<div class="form-group">
-								<label for="exampleInputFile">上传<span class="photo">医生档案：</span></label>
-								<input type="file" id="exampleInputFile">
-							</div>
-						</div>
 						<div class="col-md-3"></div>
 						<div class="submit-buttons col-md-4">
-							<button type="submit" class="btn">注册</button>
+							<button type="submit" class="btn" id="register_btn">注册</button>
 						</div>
 						<div class="submit-buttons col-md-5">
 							<a href="login.html"><button type="button" class="btn">切换登陆</button></a>
@@ -172,14 +152,13 @@
 				<ul>
 					<li><a href="#">条款及细则</a></li>
 					<li class="my-2"><a href="#">支持热线</a></li>
-					<!-- <li><a href="#">健康提示</a></li> -->
 					<li class="mt-2"><a href="#">隐私政策</a></li>
 				</ul>
 			</div>
 			<div class="col-lg-4 col-sm-6">
 				<h4 class="mb-sm-4 mb-3">订阅我们</h4>
 				<p class="mb-3">订阅我们的新闻</p>
-				<form action="#" method="post" class="d-flex">
+				<form  method="post" class="d-flex">
 					<input type="email" id="email" name="EMAIL" placeholder="Enter your email here" required="">
 					<button type="submit" class="btn">订阅</button>
 				</form>
@@ -226,4 +205,48 @@
 <!-- move top -->
 
 </body>
+<script>
+    // 绑定点击事件
+    document.querySelector('#register_btn').onclick = function () {
+		var user_name = document.register_form.name.value;
+		var user_password = document.register_form.password.value;
+
+		if(document.register_form.name.value=="" || document.register_form.password.value==""){
+			alert("请输入账号密码");
+			return false;
+		}
+		if(document.register_form.name.value.length<6 || document.register_form.name.value.length>20){
+			alert("账号长度需要在（6~20）以内");
+			return false;
+		}
+		if(document.register_form.password.value.length<6 || document.register_form.password.value.length>15){
+			alert("密码长度需要在（6~15）以内");
+			return false;
+		}
+		
+       
+		$.ajax({
+			 cache: false,
+			 async: false,  
+			 dataType: 'json', 
+			 type: 'post',
+			 url: "http://dentist-clinic.com/php/Admin.php",
+			 data:{
+				 operate:"register",
+				 username:user_name,
+				 password:user_password
+				 },
+			 success: function (data){ 
+				 if(data.status == 0) {
+					 alert(data.result);
+					 window.location.href = "http://dentist-clinic.com/web/login.html";
+				 }else if(data.status == 1){
+					 alert(data.result);
+				 }else if(data.status == 2){
+					 alert(data.result);
+				 }
+			 }
+		 });
+    }
+</script>
 </html>

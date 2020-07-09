@@ -6,8 +6,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="keywords" content="" />
+<script src="./js/jquery-3.4.1.min.js"></script>
 <script src="./js/vue.js"></script>
-<script src="./js/vueapp.js"></script>
     <script>
         addEventListener("load", function () {
             setTimeout(hideURLbar, 0);
@@ -44,17 +44,17 @@
 					</li>
 					<li>
 						<span class="fa fa-phone"></span>
-						<p class="d-inline">Call Us +12 345 678</p>
+						<p class="d-inline">联系我们 +12 345 678</p>
 					</li>
 				</ul>
 			</div>
 			<div class="col-sm-6 header-right-w3_pvt">
 				<ul class="d-lg-flex header-w3_pvt justify-content-lg-end">
 					<li class="mr-lg-3">
-						<span class=""><span class="fa fa-clock-o"></span>Mon - Fri : 8:30am to 9:30pm</span>
+						<span class=""><span class="fa fa-clock-o"></span>周一到周五 : 8:30am to 9:30pm</span>
 					</li>
 					<li class="">
-						<span class=""><span class="fa fa-clock-o"></span>Sat & Sun : 9:00am to 6:00pm</span>
+						<span class=""><span class="fa fa-clock-o"></span>周六和周日 : 9:00am to 6:00pm</span>
 					</li>
 				</ul>
 			</div>
@@ -84,9 +84,6 @@
 				<!-- 登陆成功后跳转到caseManage.html -->
 				<a class="user" href="login.html"> 登陆 / 注册</a>  	
 			</div>
-			<div class="login-icon ml-2">
-				<a class="user" href="contact.html"> 现在预订 / 联系我们</a>
-			</div>
 		</nav>
 		<div class="clear"></div>
 		<!-- //nav -->
@@ -107,28 +104,25 @@
 		<h2 class="heading text-center mb-sm-5 mb-4">登陆 / 注册 </h2>
 		<div class="row agileinfo_mail_grids">
 			<div class="col-lg-12 agileinfo_mail_grid_right">
-				<form action="#" method="post">
 					<div class="row">
 						<div class="col-md-6 wthree_contact_left_grid pr-md-0">
 							<div class="form-group">
-								<input type="text" name="name" class="form-control" placeholder="账号" required="">
+								<input type="text" name="name" id="name" class="form-control" placeholder="账号" required="">
 							</div>
-
 						</div>
 						<div class="col-md-6 wthree_contact_left_grid pr-md-0">
 							<div class="form-group">
-								<input type="password" name="password" class="form-control" placeholder="密码" required="">
+								<input type="password" name="password" id="password" class="form-control" placeholder="密码" required="">
 							</div>
 						</div>
 						<div class="col-md-3"></div>
-						<div class="submit-buttons col-md-4">
-							<button type="submit" class="btn">登陆</button>
+						<div class="col-md-4">
+							<button class="btn" id="login_btn">登陆</button>
 						</div>
 						<div class="submit-buttons col-md-5">
 							<a href="register.html"><button type="button" class="btn">切换注册</button></a>
 						</div>
 					</div>
-				</form>
 			</div>
 		</div>
 	</div>
@@ -164,7 +158,7 @@
 			<div class="col-lg-4 col-sm-6">
 				<h4 class="mb-sm-4 mb-3">订阅我们</h4>
 				<p class="mb-3">订阅我们的新闻</p>
-				<form action="#" method="post" class="d-flex">
+				<form  method="post" class="d-flex">
 					<input type="email" id="email" name="EMAIL" placeholder="Enter your email here" required="">
 					<button type="submit" class="btn">订阅</button>
 				</form>
@@ -184,7 +178,6 @@
 					<a href="#" class="button-footr">
 						<span class="fa mx-2 fa-google-plus"></span>
 					</a>
-
 				</div>
 			</div>
 		</div>
@@ -211,4 +204,34 @@
 <!-- move top -->
 
 </body>
+<script>
+    // 绑定点击事件
+    document.querySelector('#login_btn').onclick = function () {
+		var user_name = document.getElementById("name").value;
+		var user_password =document.getElementById("password").value;
+		
+		if(user_name=="" || user_password==""){
+			alert("请输入账号密码");
+			return false;
+		}	
+
+		$.ajax({
+			 cache: false,
+			 async: false,  
+			 dataType: 'json', 
+			 type: 'post',
+			 url: "http://dentist-clinic.com/php/Admin.php",
+			 data:{
+				 operate:"login",
+				 username:user_name,
+				 password:user_password
+				 },
+			 success: function (data){
+				console.log(data);
+				window.location.href = "http://dentist-clinic.com/web/caseManage.html";
+			 }
+		 });
+    }
+</script>
+
 </html>
