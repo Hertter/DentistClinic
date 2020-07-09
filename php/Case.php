@@ -33,9 +33,13 @@ class IllnessCase extends  PDOO {
      */
     public function find($id) {
         $result_find = parent::fin([
-                'id',
-                'name',
-                'note'
+            'id',
+            'name',
+            'sex',
+            'born_year',
+            'note',
+            'status',
+            'treatment_plan'
             ], 'illness_case', ' id = ' . $id);
         if ($result_find['status'] === 2) {
             $result_find['result'] = '查询失败';
