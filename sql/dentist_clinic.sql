@@ -85,13 +85,14 @@ CREATE TABLE `doctor`  (
   `sex` tinyint(0) NULL DEFAULT NULL COMMENT '性别',
   `profile` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL COMMENT '简介',
   `clinic_id` int(0) NULL DEFAULT NULL COMMENT '所属诊所',
+  `location` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NULL DEFAULT NULL COMMENT '所属诊所',
   PRIMARY KEY (`id`) USING BTREE
 ) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of doctor
 -- ----------------------------
-INSERT INTO `doctor` VALUES (1, '何梓涛', 'hzt', 'hzthzt', 0, '十年老口医,值得信赖.', 1);
+INSERT INTO `doctor` VALUES (1, '何梓涛', 'hzt', 'hzthzt', 0, '十年老口医,值得信赖.', 1, '广东省深圳市第一诊所');
 
 -- ----------------------------
 -- Table structure for expert
