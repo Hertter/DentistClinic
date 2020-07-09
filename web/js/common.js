@@ -154,11 +154,11 @@ $(function caseFind() {
 
 // 牙医资料查询
 $(function findDoctor() {
-
+    // 放入username
     // var username = sessionStorage.getItem('username');
+    
     // var id = sessionStorage.getItem('id');
-
-    var id = 1;
+    // var id = 1;
     var username = "hzt";
 
     $.ajax({
@@ -169,7 +169,6 @@ $(function findDoctor() {
         data: {
             operate: "find",
             username: username,
-            id: id
         },
         success:function(data){
             console.log(data);
@@ -214,7 +213,6 @@ $(function modifyDetails() {
     var docProfile = sessionStorage.getItem('docProfile');
     var docPassword = sessionStorage.getItem('docPassword');
 
-
     $("#updateName").val(docName);
     $("#updateSex").val(docSex);
     $("#updateUsername").val(docUsername);
@@ -224,8 +222,7 @@ $(function modifyDetails() {
 
 });
 
-//
-// 
+// 更新医生资料
 function updatePersonData() {
     var updateDocForm = $('#updateDocForm').serialize();
     $.ajax({
