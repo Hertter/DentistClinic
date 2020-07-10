@@ -252,30 +252,32 @@ function newCaseOder() {
     var orderCase = $("#orderCase").val();
     var sendPerson = $("#sendPerson").val();
 
-    var addTable=$("#orderTable")
-    var row_index=$("#orderTable").find("tr").length ;
-    // var row_index=addTable.rows.length;
-    // alert(row_index);
-
-    var td1=$("#oderCase").val();
-    var td2=$("#sendPerson").val();
-    var tr=$("<tr></tr>");             
-    tr.html(
-            "<th scope='row'>"+row_index+"</th>"+
-            "<td>"+
-                "<div><a href='caseDetails.html'>"+orderCase+"</a></div>"+
-            "</td>"+
-            "<td>"+sendPerson+"</td>"+
-            "<td>"+
-                "<a class='btn btn-warning btn-small' href='#' onclick='removeCase(this)' style='margin-right: 5px;'>删除</a>"+
-                "<a class='btn btn-primary btn-small' href='#' data-toggle='modal' data-target='#expertsPlan'>查看</a>"+
-            "</td>"
-            );
-    $("tbody").append(tr);
-   
+    if (orderCase != "" && sendPerson != "") {
+        var row_index=$("#orderTable").find("tr").length ;
+        var tr=$("<tr></tr>");             
+        tr.html(
+                "<th scope='row'>"+row_index+"</th>"+
+                "<td>"+
+                    "<div><a href='caseDetails.html'>"+orderCase+"</a></div>"+
+                "</td>"+
+                "<td>"+sendPerson+"</td>"+
+                "<td>"+
+                    "<a class='btn btn-warning btn-small' href='#' onclick='removeCase(this)' style='margin-right: 5px;'>删除</a>"+
+                    "<a class='btn btn-primary btn-small' href='#' data-toggle='modal' data-target='#expertsPlan'>查看</a>"+
+                "</td>"
+                );
+        $("tbody").append(tr);
+    }
+    else if (orderCase == "") {
+        alert("病例不能为空！");
+    }
+    else if (sendPerson == "") {
+        alert("发起人不能为空！");
+    }
 }
 // 删除订单
 function removeCase(nowTr) {
-    // alert("test");
-    $(nowTr).closest('tr').remove();
+    if (confirm("确认删除吗")) {
+        $(nowTr).closest('tr').remove();
+    }
 }
