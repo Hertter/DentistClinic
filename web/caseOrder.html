@@ -106,7 +106,7 @@
 				<div class="row">
 					<h5 class="heading text-center orderManage">订单管理</h5>
 				</div>
-				<table class="table table-striped" style="width: 60rem; margin: 20px auto; text-align: center;border: 1px solid #0ab4f7;">
+				<table class="table table-striped"  id="orderTable" style="width: 60rem; margin: 20px auto; text-align: center;border: 1px solid #0ab4f7;">
 					<thead>
 					<tr>
 						<th scope="col">编号</th>
@@ -123,7 +123,7 @@
 							</td>
 							<td>安医生</td>
 							<td>
-								<a class="btn btn-warning btn-small" href="#">删除</a>
+								<a class="btn btn-warning btn-small" href="#" onclick="removeCase()">删除</a>
 								<a class="btn btn-primary btn-small" href="#" data-toggle="modal" data-target="#expertsPlan">查看</a>
 							</td>
 							
@@ -135,7 +135,7 @@
 							</td>
 							<td>安医生</td>
 							<td>
-								<a class="btn btn-warning btn-small" href="#">删除</a>
+								<a class="btn btn-warning btn-small" href="#" onclick="removeCase()">删除</a>
 								<a class="btn btn-primary btn-small" href="#" data-toggle="modal" data-target="#expertsPlan">查看</a>
 							</td>
 						</tr>
@@ -146,7 +146,7 @@
 							</td>
 							<td>安医生</td>
 							<td>
-								<a class="btn btn-warning btn-small" href="#">删除</a>
+								<a class="btn btn-warning btn-small" href="#" onclick="removeCase()">删除</a>
 								<a class="btn btn-primary btn-small" href="#" data-toggle="modal" data-target="#expertsPlan">查看</a>
 							</td>
 						</tr>
@@ -154,7 +154,7 @@
 				</table>
 				<div>
 					<div class="pull-right">
-						<button type="button" class="btn btn-danger btn-block" href="#" data-toggle="modal" data-target="#orderModal">添加订单</button>
+						<button type="button" id="addOrder" class="btn btn-danger btn-block" href="#" data-toggle="modal" data-target="#orderModal">添加订单</button>
 					</div>
 				</div>
 
@@ -170,7 +170,7 @@
 						  <form>
 							<div class="form-group modelForm">
 							  <label for="case-name" class="control-label">病例:</label>
-							  <input type="text" class="form-control" id="case-name" placeholder="请输入病例id...">
+							  <input type="text" class="form-control" id="orderCase" placeholder="请输入病例id...">
 							</div>
 							<div class="form-group modelForm">
 							  <label for="sendPerson" class="control-label">发起人:</label>
@@ -180,7 +180,7 @@
 						  <!-- 模态框底部 -->
 						  <div class="modal-footer">
 							<button type="button" class="btn btn-secondary" data-dismiss="modal">关闭</button>
-							<button type="submit" class="btn btn-secondary" style="background:#007bff" data-dismiss="modal">提交</button>
+							<button type="submit" class="btn btn-secondary" style="background:#007bff" data-dismiss="modal" onclick="newCaseOder()">提交</button>
 						  </div>						 
 						</div>
 					  </div>

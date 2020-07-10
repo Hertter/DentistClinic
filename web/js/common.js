@@ -247,4 +247,34 @@ function updatePersonData() {
     });
 }
 
+// 创建订单
+function newCaseOder() {
+    var orderCase = $("#orderCase").val();
+    var sendPerson = $("#sendPerson").val();
 
+    var addTable=$("#orderTable")
+    var row_index=$("#orderTable").find("tr").length ;
+    // var row_index=addTable.rows.length;
+    // alert(row_index);
+
+    var td1=$("#oderCase").val();
+    var td2=$("#sendPerson").val();
+    var tr=$("<tr></tr>");             
+    tr.html(
+            "<th scope='row'>"+row_index+"</th>"+
+            "<td>"+
+                "<div><a href='caseDetails.html'>"+orderCase+"</a></div>"+
+            "</td>"+
+            "<td>"+sendPerson+"</td>"+
+            "<td>"+
+                "<a class='btn btn-warning btn-small' href='#' onclick='removeCase()' style='margin-right: 5px;'>删除</a>"+
+                "<a class='btn btn-primary btn-small' href='#' data-toggle='modal' data-target='#expertsPlan'>查看</a>"+
+            "</td>"
+            );
+    $("tbody").append(tr);
+   
+}
+
+function removeCase() {
+    $(this).parent().parent().remove();
+}
