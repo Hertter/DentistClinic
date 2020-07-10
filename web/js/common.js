@@ -267,14 +267,15 @@ function newCaseOder() {
             "</td>"+
             "<td>"+sendPerson+"</td>"+
             "<td>"+
-                "<a class='btn btn-warning btn-small' href='#' onclick='removeCase()' style='margin-right: 5px;'>删除</a>"+
+                "<a class='btn btn-warning btn-small' href='#' onclick='removeCase(this)' style='margin-right: 5px;'>删除</a>"+
                 "<a class='btn btn-primary btn-small' href='#' data-toggle='modal' data-target='#expertsPlan'>查看</a>"+
             "</td>"
             );
     $("tbody").append(tr);
    
 }
-
-function removeCase() {
-    $(this).parent().parent().remove();
+// 删除订单
+function removeCase(nowTr) {
+    // alert("test");
+    $(nowTr).closest('tr').remove();
 }
